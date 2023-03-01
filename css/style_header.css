@@ -8,7 +8,7 @@ body {
 * {
     margin: 0px;
     padding: 0px;
-    font-family: Avenir, sans-serif;
+    font-family: Open Sans, sans-serif;
 }
 
 nav {
@@ -21,6 +21,8 @@ nav {
 
 nav ul {
     list-style-type: none;
+    font-size: 20px;
+    padding-top: 50px;
 }
 
 nav li {
@@ -54,4 +56,26 @@ nav a {
 nav a:hover {
     color: orange;
     border-bottom: 2px solid gold;
+}
+
+.navbar li ul {
+    display: none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+.navbar li:hover ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar li ul li a {
+    border: #FFC72C
+}
+
+img {
+    width: 50%;
 }
