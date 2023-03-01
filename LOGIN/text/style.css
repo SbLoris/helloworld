@@ -1,0 +1,110 @@
+/* Reset des styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styles pour le corps de la page */
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Styles pour le logo et le titre */
+  
+ .logo-principal {
+  display: flex;
+  justify-content: space-between; /* Pour aligner les éléments à l'extrémité gauche et droite */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.photo {
+  width: 7rem;
+  
+  display: flex;
+  justify-content: end;
+
+}
+
+h1 {
+    display: flex;
+    justify-content: start;
+  font-size: 24px;
+  text-align: left; /* Pour aligner le texte à gauche */
+  margin-left: 20px; /* Pour ajouter un peu d'espace entre l'image et le texte */
+}
+  
+  /* Styles pour le formulaire */
+  
+  form {
+    display: inline-block;
+    border: 2px solid #dddddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="submit"] {
+    background-color: #FFC72C;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #c39928;
+  }
+  
+  a {
+    color: #FFC72C;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styles pour le bouton d'affichage du mot de passe */
+  
+  input[type="checkbox"] {
+    margin-top: 10px;
+  }
+  
+  /* Styles pour les messages d'erreur */
+  
+  .error {
+    color: #ff0000;
+    margin-top: 10px;
+  }
+  
