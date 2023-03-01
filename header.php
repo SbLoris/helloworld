@@ -11,19 +11,17 @@
 <header>
     <div class="container">
     <nav>
-  <ul>
-  <ul>
-        <li><a href="#">RDV</a></li>
+  <ul class="navbar">
+        <li><a href="#">RDV</a>
         <ul>
             <li><a href="#">Récents</a></li>
             <li><a href="#">A venir</a></li>
-        </ul>
+        </ul></li>
         <li><a href="#">Statistiques</a></li>
         <li><a href="#"><img src="img/logo.png" alt=""></a></li>
         <li><a href="#">Planning</a></li>
         <li><a href="#">Feuilles de suivies</a></li>
     </ul>
-  </ul>
 </nav>
 </div>
 </header>
