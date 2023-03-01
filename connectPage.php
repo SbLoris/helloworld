@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<?php
@@ -23,7 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST["Code"];
 
         // Requête SQL pour vérifier si le mot de passe existe dans la base de données
-        $sql = "SELECT * FROM users WHERE mdp = '$password'";
+        $sql = "SELECT * 
+        FROM users 
+        WHERE mail = '$mail'
+        AND mdp = '$password';";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
