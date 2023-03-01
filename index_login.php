@@ -42,14 +42,14 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="text/style.css">
-    <link rel="stylesheet" href="text/normalize.css">
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <title>Login page </title>
 </head>
 <header>
     <div class="logo-principal">
     <h1>Hello. <br> Welcome back</h1> 
-    <img src="photos/Logo.png" class="photo">
+    <img src="img/Logo.png" class="photo">
     
 </div>
 </header>
