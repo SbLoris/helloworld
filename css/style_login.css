@@ -10,7 +10,7 @@
   
   body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: red;
     color: black;
     text-align: center;
     padding: 20px;
@@ -88,7 +88,7 @@ h1 {
   a {
     color: #FFC72C;
     text-decoration: none;
-    margin-left: 10px;
+    margin: 3rem;
   }
   
   a:hover {
@@ -112,5 +112,8 @@ h1 {
   }
   .custom-checkbox input[type="checkbox"]:checked~.unchecked {
     display: none;
+  }
+  .creationCompte{
+    
   }
   
