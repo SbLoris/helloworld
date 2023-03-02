@@ -1,0 +1,23 @@
+.stats {
+    width: 1080px;
+    height: 550px;
+    background: black;
+    margin: 200px;
+    margin-left: 225px;
+}
+
+.planning {
+    width: 1080px;
+    height: 550px;
+    background: rgb(114, 114, 114);
+    margin: 200px;
+    margin-left: 225px;
+}
+
+.RDV {
+    width: 1080px;
+    height: 550px;
+    background: black;
+    margin: 200px;
+    margin-left: 225px;
+}

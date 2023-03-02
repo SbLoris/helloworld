@@ -82,12 +82,6 @@ $conn->close();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="text/style.css">
-
-   <link rel="stylesheet" href="text/normalize.css">
-   <link rel="shortcut icon" href="photos/logo-mongazon.png type="image/x-icon">
-
-   
-	
 </head>
 <body>
 
@@ -106,36 +100,6 @@ $conn->close();
 
 
 	</div>
-	<footer>
-    <div class="footer">
-	<div class="grid-container">
-  <div class="grid-item-1">
-<img src=photos/logo-mongazon.png></img>
-<p>1, rue du colombier BP 13624<br>
-49036 ANGERS Cedex 01</p>
-<p>Tél. : 02 41 66 41 33</p></div>
-
-               
-          
-  
-  <div class="grid-item-2">
-	<div class="grid-item-2-img">
-  <a target="_blank" href="https://www.facebook.com/pages/Institution-Mongazon/110884072306292?ref=br_rs"><img src=photos/rs-facebook.png></img></a>
-  <a target="_blank" href="https://www.youtube.com/channel/UCoarKyTSnU46puUfZjY0oag"><img src=photos/rs-youtube.png></img></a>
-  <a target="_blank" href="https://twitter.com/mongazon?lang=fr"><img src=photos/rs-twitter.png></img></a>
-</div>
-
-
-	<p><a href="mailto:accueil@mongazon.org">accueil@mongazon.org</a></p>
-  <p><a href="mailto:secretariat-college@mongazon.org">secretariat-college@mongazon.org</a></p>
-  <p><a href="mailto:secretariat-lycee@mongazon.org">secretariat-lycee@mongazon.org</a></p>
-  <p><a href="mailto:sec-enseignement-superieur@mongazon.org">sec-enseignement-superieur@mongazon.org</a></p></div>
-     
-    </div>
-	</div>
-	<p class="text-footer">©Mongazon 2018 - tous droits réservés <a href="https://www.mongazon.org/institution/mentions-legales">| Mentions légales </a>| <a href="https://www.mongazon.org/institution/politique-de-protection-des-donnees"> Politique de protection des données.</p>
-
-</footer>
 </body>
 
 </html>
