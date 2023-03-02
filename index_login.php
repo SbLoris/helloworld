@@ -9,6 +9,7 @@
 	if (!$conn) {
 		die("Connexion échouée: " . mysqli_connect_error());
 	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +36,14 @@
 </header>
 <body>
     
-	<form action="Zaccueil.php" method="post">
-		<label for="username" class="custom-checkbox">Nom d'utilisateur :</label>
+	<form action="accueil.php" method="post">
+		<p>Nom d'utilisateur :</p>
 		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
          
 		<div class="password-field">
-<input type="password" id="fakePassword" placeholder="Votre mot de passe" />
-<i id="toggler"class="far fa-eye"></i>
+		<p>Mot de passe :</p>
+<input type="password" id="fakePassword" name="mdp" placeholder="Votre mot de passe" />
+<i id="toggler"class="fa-sharp fa-solid fa-eye-slash"></i> 
 </div>
 
 		
