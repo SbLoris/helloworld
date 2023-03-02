@@ -9,8 +9,8 @@
   /* Styles pour le corps de la page */
   
   body {
-    font-family: Arial, sans-serif;
-    background-color: red;
+    font-family: Open, sans-serif;
+    background-color: white;
     color: black;
     text-align: center;
     padding: 20px;
@@ -18,9 +18,9 @@
   
   /* Styles pour le logo et le titre */
   
- .logo-principal {
+ .logo {
   display: flex;
-  justify-content: space-between; /* Pour aligner les éléments à l'extrémité gauche et droite */
+  justify-content: end; /* Pour aligner les éléments à l'extrémité gauche et droite */
   align-items: center;
   margin-bottom: 20px;
 }
@@ -63,11 +63,14 @@ h1 {
   input[type="text"],
   input[type="password"] {
     display: block;
+    position: relative;
     width: 100%;
     padding: 10px;
     border: 1px solid #cccccc;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
   }
   
   input[type="submit"] {
@@ -88,7 +91,7 @@ h1 {
   a {
     color: #FFC72C;
     text-decoration: none;
-    margin: 3rem;
+    margin : 1.5rem;
   }
   
   a:hover {
@@ -99,6 +102,7 @@ h1 {
   
   input[type="checkbox"] {
     margin-top: 10px;
+    
   }
   
   /* Styles pour les messages d'erreur */
@@ -107,13 +111,22 @@ h1 {
     color: #ff0000;
     margin-top: 10px;
   }
-  .custom-checkbox input[type="checkbox"]:checked~.checked {
-    display: inline-block;
-  }
-  .custom-checkbox input[type="checkbox"]:checked~.unchecked {
-    display: none;
-  }
-  .creationCompte{
-    
-  }
-  
+
+
+  body .password-field {
+    position: relative;
+    }
+    body .password-field input {
+
+   
+ 
+    }
+    body .password-field input::placeholder {
+   
+    }
+    body .password-field #toggler {
+
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    }

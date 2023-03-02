@@ -18,26 +18,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style_login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/ef6de71bd8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <title>Login page</title>
 </head>
 <header>
-    <div class="logo-principal">
-    <h1>Hello.</h1>
-    <h1>Welcome back</h1> 
+	<div class="logo">
     <img src="img/Logo.png" class="photo">
-    
-</div>
+	</div>
+
+    <div class="titre">
+    <h1>Hello.</h1>
+    <h1>Welcome back</h1>
+	</div> 
+	
 </header>
 <body>
     
 	<form action="" method="post">
 		<label for="username" class="custom-checkbox">Nom d'utilisateur :</label>
-		<input type="text" id="username" name="mail" required><br><br>
-		<label for="password">Mot de passe :</label>
-		<input type="password" id="password" name="mdp" required>
-		<input type="checkbox" onclick="showPassword()"> Afficher/masquer le mot de passe<br><br>
+		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
+         
+		<div class="password-field">
+<input type="password" id="fakePassword" placeholder="Votre mot de passe" />
+<i id="toggler"class="far fa-eye"></i>
+</div>
+
+		
 		<input type="submit" value="Se connecter">
 		<a href="#">Mot de passe oublié ?</a>
 	</form>
