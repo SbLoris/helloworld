@@ -1,41 +1,16 @@
 <?php
-// Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "julesimmobilier";
+	// Connexion à la base de données
+	require_once("api/connectDB.php");
+	include_once("api/apiStatsRDV.php");
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+	$conn = new DatabaseConnection();
 
-// Vérification de la connexion
-if (!$conn) {
-    die("Connexion échouée: " . mysqli_connect_error());
-}
-
-
-// Vérification du formulaire soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Récupération des données soumises
-  $username = $_REQUEST["mail"];
-  $password = $_REQUEST["mdp"];
-
-  // Requête pour vérifier si le login et le mot de passe existent dans la base de données
-  $sql = "SELECT * FROM users WHERE mail='$username' AND mdp=MD5('$password')";
-  $result = mysqli_query($conn, $sql);
-
-  // Vérification du résultat de la requête
-  if (mysqli_num_rows($result) == 1) {
-    // Login et mot de passe corrects
-    header("Location: dashboard.php"); // Redirection vers la page de connexion réussie
-  } else {
-    // Login ou mot de passe incorrects
-    echo "Login ou mot de passe incorrects.";
-  }
-}
-
-// Fermeture de la connexion
-mysqli_close($conn);
+	// Vérification de la connexion
+	if (!$conn) {
+		die("Connexion échouée: " . mysqli_connect_error());
+	}
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
