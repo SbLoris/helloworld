@@ -9,7 +9,7 @@
     <title>Jules imobilier</title>
 </head>
 <header>
-    <div class="container">
+    <div class="wrap">
     <nav>
   <ul class="navbar">
         <li><a href="#">RDV</a>
