@@ -1,17 +1,18 @@
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "" ;
-$database = "julesimmobilier";
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+require_once("api/connectDB.php");
+require_once("api/apiStatsRDV.php");
+$conn = new DatabaseConnection();
 
-$results = $conn->query("SELECT * FROM profil");
-$data = array();
-while ($result = $results->fetch_assoc() ){
-    array_push($data, $result['id']);
-}
+$stats = new statsRDV($conn);
+
+$totalRDV = $_SESSION['result1'];
+$totalRDV7days = $_SESSION['result2'];
+$totalClientVu = $_SESSION['result3'];
+
+$data = [$totalRDV,$totalRDV7days,$totalClientVu];
+
 print json_encode($data);
 ?>
 

@@ -37,7 +37,7 @@ class DatabaseConnection {
             $username = $_REQUEST["mail"];
             $password = $_REQUEST["mdp"];
 
-            $sql = $this->mysqli->prepare("SELECT id_profil 
+            $sql = $this->mysqli->prepare("SELECT id 
                     FROM users 
                     WHERE mail=? 
                     AND mdp=MD5(?)");
@@ -48,7 +48,9 @@ class DatabaseConnection {
             $result = $sql->get_result();
 
             if (mysqli_num_rows($result) == 1) {
-                return $_SESSION['idUser'] = $result;
+                foreach($result as $data){
+                    return $_SESSION['idUser'] = $data['id'];
+                }
             } else {
                 return $_SESSION['idUser'] = false;
             }

@@ -1,8 +1,9 @@
 $.ajax({
-    url: "test.php",
+    url: "Zaccueil.php",
     type: "GET",        
     success: function (data) {
         data = JSON.parse(data)
+
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
@@ -11,7 +12,7 @@ $.ajax({
             labels: ['Nombre de RDV', 'RDV 7 derniers jours', 'Clients vus'],
             datasets: [{
                 label: '#RDV',
-                data: [data[0], data[1], data[2]],
+                data: [data[0],data[1],data[2]],
                 backgroundColor:['#FF0000', '#00ff00', '#0000ff'],
                 borderWidth: 1
             }]
