@@ -11,7 +11,6 @@
 <body style="background-color:white;">
     <?php
         $conn = new DatabaseConnection();
-        $idconn = $conn->connect();
         $idUser = $_SESSION["idUser"];
             if($idUser == false) {
                 echo "Identifiant ou mot de passe incorrect, merci de réessayer";
@@ -19,7 +18,7 @@
                 exit();
             }
         
-        var_dump($idUser);
+        echo "L'ID de l'utilisateur est le : $idUser";
         
     ?>
 
