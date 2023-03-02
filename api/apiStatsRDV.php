@@ -2,7 +2,7 @@
 
 require_once("connectDB.php");
 
-class api {
+class statsRDV {
         private $connexion;
         public $totalRDV;
         public $totalRDV7days;
