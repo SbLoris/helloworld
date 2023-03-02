@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/style_login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <title>Login page </title>
+    <title>Login page</title>
 </head>
 <header>
     <div class="logo-principal">
@@ -41,7 +41,7 @@
 		<input type="submit" value="Se connecter">
 		<a href="#">Mot de passe oublié ?</a>
 	</form>
-	
+
     <div class="creationCompte">
    		<a href="#">Créer un compte</a>
 	</div>
