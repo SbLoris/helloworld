@@ -11,13 +11,13 @@
 <body style="background-color:white;">
     <?php
         new DatabaseConnection();
-        new statsRDV();
         $idUser = $_SESSION["idUser"];
             if($idUser == false) {
                 echo "Identifiant ou mot de passe incorrect, merci de réessayer";
                 echo "<a href='index_login.php'><button>Se reconnecter</button></a>";
                 exit();
             }
+            new statsRDV();
 
         $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];
 
