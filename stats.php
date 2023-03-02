@@ -16,15 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
    <script src="./js/script.js"></script>
-
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Profil</th>
-        </tr>
-        <tbody id="data">
-        </tbody>
-    </table>
 </body>
 </html>
 
