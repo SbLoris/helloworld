@@ -37,7 +37,10 @@ class DatabaseConnection {
             $username = $_REQUEST["mail"];
             $password = $_REQUEST["mdp"];
 
-            $sql = "SELECT * FROM users WHERE mail='$username' AND mdp=MD5('$password')";
+            $sql = "SELECT id_profil 
+                    FROM users 
+                    WHERE mail='$username' 
+                    AND mdp=MD5('$password')";
         
             $result = $this->mysqli->query($sql);
 
@@ -48,6 +51,8 @@ class DatabaseConnection {
                 // Login ou mot de passe incorrects
                 echo "Login ou mot de passe incorrects.";
               }
+
+              return $sql;
         }
     }
 }
