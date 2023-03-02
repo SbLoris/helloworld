@@ -41,9 +41,10 @@
 		<input type="submit" value="Se connecter">
 		<a href="#">Mot de passe oublié ?</a>
 	</form>
+	
     <div class="creationCompte">
-    <a href="#">Créer un compte</a>
-</div>
+   		<a href="#">Créer un compte</a>
+	</div>
     
 	<script src="js/fonction.js"></script>
     
