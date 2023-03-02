@@ -1,11 +1,26 @@
+<?php require_once("api/includeAll.php"); ?>
+<?php
+  new DatabaseConnection();
+  $idUser = $_SESSION["idUser"];
+    if($idUser == false) {
+      echo "Identifiant ou mot de passe incorrect, merci de réessayer";
+      echo "<a href='index_login.php'><button>Se reconnecter</button></a>";
+      exit();
+    }
+?>
 <?php include ("header.php");?>
 <link rel="stylesheet" href="css/style_accueil.css">
- <div class="RDV"></div>
 
- <div class="container">
-  <h1>Jules Immobilier</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ab itaque sunt accusamus dolorem obcaecati nam? Reiciendis, harum velit blanditiis impedit molestiae amet tenetur aspernatur doloribus ea nisi, a rerum.</p>
-  <a href="#">En savoir plus</a>
+<?php
+  new statsRDV();
+  $prenom =  $_SESSION["prenom"];
+  echo "Bonjour $prenom";
+
+  $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];     
+?>
+
+<div class="container">
+  <canvas id="myChart"></canvas>
 </div>
 
 <div class="blank"></div>
@@ -39,5 +54,29 @@
 
 <div class="blank"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  data = <?php print json_encode($data); ?>
 
+  const ctx = document.getElementById('myChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Nombre de RDV', 'RDV 7 derniers jours', 'Clients vus'],
+      datasets: [{
+        label: '#RDV',
+        data: data,
+        backgroundColor:['#FF0000', '#00ff00', '#0000ff'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
 <?php include ("footer.php");?>
