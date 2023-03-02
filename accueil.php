@@ -3,8 +3,8 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
     if($idUser == false) {
-      echo "Identifiant ou mot de passe incorrect, merci de réessayer";
-      echo "<a href='index_login.php'><button>Se reconnecter</button></a>";
+      echo "<link rel='stylesheet' href='css/style_accueil.css'><div class='erreur'>Identifiant ou mot de passe incorrect, merci de réessayer</div>";
+      echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='erreur'><a href='index_login.php'><button>Se reconnecter</button></a></div>";
       exit();
     }
 ?>
@@ -14,7 +14,7 @@
 <?php
   new statsRDV();
   $prenom =  $_SESSION["prenom"];
-  echo "Bonjour $prenom";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='message'>Bonjour $prenom</div>";
 
   $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];     
 ?>
