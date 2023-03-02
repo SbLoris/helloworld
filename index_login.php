@@ -1,7 +1,6 @@
 <?php
 	// Connexion à la base de données
-	require_once("api/connectDB.php");
-	include_once("api/apiStatsRDV.php");
+	require_once("api/includeAll.php");
 
 	$conn = new DatabaseConnection();
 
@@ -40,7 +39,7 @@
 		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
          
 		<div class="password-field">
-<input type="password" id="fakePassword" placeholder="Votre mot de passe" />
+<input type="password" id="fakePassword" name="mdp" placeholder="Votre mot de passe" />
 <i id="toggler"class="far fa-eye"></i>
 </div>
 

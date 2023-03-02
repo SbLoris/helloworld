@@ -1,5 +1,5 @@
 $.ajax({
-    url: "test.php",
+    url: "Zaccueil.php",
     type: "GET",        
     success: function (data) {
         data = JSON.parse(data)
