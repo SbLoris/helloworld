@@ -48,14 +48,9 @@ class DatabaseConnection {
             $result = $sql->get_result();
 
             if (mysqli_num_rows($result) == 1) {
-                // Login et mot de passe corrects
-                // On connecte l'utilisateur
-                header("Location: Zaccueil.php"); // Redirection vers la page de connexion réussie
-                return $result;
+                return $_SESSION['idUser'] = $result;
             } else {
-                // Login ou mot de passe incorrects
-                echo "Login ou mot de passe incorrects.";
-                $result = false;
+                return $_SESSION['idUser'] = false;
             }
         }
     }
