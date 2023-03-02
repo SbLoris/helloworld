@@ -45,9 +45,7 @@
     <a href="#">Créer un compte</a>
 </div>
     
-	<script>
-	
-	</script>
+	<script src="js/fonction.js"></script>
     
 </body>
 </html>
