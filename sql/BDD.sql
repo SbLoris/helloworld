@@ -24,7 +24,7 @@ CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nom VARCHAR(50),
     prenom VARCHAR(50),
-    mail VARCHAR(50),
+    mail VARCHAR(50) UNIQUE,
     mdp VARCHAR(50),
     id_profil INT,
     FOREIGN KEY (id_profil) REFERENCES profil(id)
