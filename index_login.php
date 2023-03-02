@@ -39,10 +39,9 @@
 		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
          
 		<div class="password-field">
-<input type="password" id="fakePassword" name="mdp" placeholder="Votre mot de passe" />
-<i id="toggler"class="far fa-eye"></i>
-</div>
-
+			<input type="password" id="fakePassword" name="mdp" placeholder="Votre mot de passe" />
+			<i id="toggler"class="far fa-eye"></i>
+		</div>
 		
 		<input type="submit" value="Se connecter">
 		<a href="#">Mot de passe oublié ?</a>
