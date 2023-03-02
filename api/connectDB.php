@@ -37,22 +37,26 @@ class DatabaseConnection {
             $username = $_REQUEST["mail"];
             $password = $_REQUEST["mdp"];
 
-            $sql = "SELECT id_profil 
+            $sql = $this->mysqli->prepare("SELECT id_profil 
                     FROM users 
-                    WHERE mail='$username' 
-                    AND mdp=MD5('$password')";
-        
-            $result = $this->mysqli->query($sql);
+                    WHERE mail=? 
+                    AND mdp=MD5(?)");
+
+            $sql->bind_param("ss", $username, $password);
+            $sql->execute();
+
+            $result = $sql->get_result();
 
             if (mysqli_num_rows($result) == 1) {
                 // Login et mot de passe corrects
-                header("Location: dashboard.php"); // Redirection vers la page de connexion réussie
-              } else {
+                // On connecte l'utilisateur
+                header("Location: Zaccueil.php"); // Redirection vers la page de connexion réussie
+                return $result;
+            } else {
                 // Login ou mot de passe incorrects
                 echo "Login ou mot de passe incorrects.";
-              }
-
-              return $sql;
+                $result = false;
+            }
         }
     }
 }

@@ -32,7 +32,7 @@
 </header>
 <body>
     
-	<form action="" method="post">
+	<form action="Zaccueil.php" method="post">
 		<label for="username" class="custom-checkbox">Nom d'utilisateur :</label>
 		<input type="text" id="username" name="mail" required><br><br>
 		<label for="password">Mot de passe :</label>
