@@ -43,11 +43,6 @@
 	</form>
     <div class="creationCompte">
     <a href="#">Créer un compte</a>
-</div>
-    
-	<script>
-	
-	</script>
-    
+</div>  
 </body>
 </html>
