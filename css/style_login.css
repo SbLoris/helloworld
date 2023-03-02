@@ -107,4 +107,10 @@ h1 {
     color: #ff0000;
     margin-top: 10px;
   }
+  .custom-checkbox input[type="checkbox"]:checked~.checked {
+    display: inline-block;
+  }
+  .custom-checkbox input[type="checkbox"]:checked~.unchecked {
+    display: none;
+  }
   

@@ -43,12 +43,14 @@ mysqli_close($conn);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <title>Login page </title>
 </head>
 <header>
     <div class="logo-principal">
-    <h1>Hello. <br> Welcome back</h1> 
+    <h1>Hello.</h1>
+    <h1>Welcome back</h1> 
     <img src="img/Logo.png" class="photo">
     
 </div>
@@ -56,7 +58,7 @@ mysqli_close($conn);
 <body>
     
 	<form action="" method="post">
-		<label for="username">Nom d'utilisateur :</label>
+		<label for="username" class="custom-checkbox">Nom d'utilisateur :</label>
 		<input type="text" id="username" name="mail" required><br><br>
 		<label for="password">Mot de passe :</label>
 		<input type="password" id="password" name="mdp" required>
@@ -69,14 +71,7 @@ mysqli_close($conn);
 </div>
     
 	<script>
-		function showPassword() {
-			var x = document.getElementById("password");
-			if (x.type === "password") {
-				x.type = "text";
-			} else {
-				x.type = "password";
-			}
-		}
+	
 	</script>
     
 </body>
