@@ -3,13 +3,13 @@
 require_once("connectDB.php");
 
 class statsRDV {
-        private $connexion;
+        private $db;
         public $totalRDV;
         public $totalRDV7days;
         public $totalClientVu;
     
-        public function __construct($connexion) {
-            $this->connexion = $connexion;
+        public function __construct() {
+            $this->db = new DatabaseConnection();
             $this->totalRDV = $this->totalRDV();
             $this->totalRDV7days = $this->totalRDV7days();
             $this->totalClientVu = $this->totalClientVu();
@@ -21,11 +21,11 @@ class statsRDV {
                         $idUser = $_SESSION['idUser'];
                         $sql = "SELECT COUNT(*) as rdvTotal
                                 FROM rendezvous
-                                WHERE id_users = $idUser;";
-                        $result1 = $this->connexion->mysqli->query($sql);
+                                WHERE id_user = $idUser;";
+                        $result1 = $this->db->mysqli->query($sql);
 
-                        foreach ($result1 as $data['rdvTotal']) {
-                                return $result1;
+                        foreach ($result1 as $data) {
+                                return $_SESSION['result1'] = $data['rdvTotal'];
                         }
                 }
         }
@@ -36,12 +36,12 @@ class statsRDV {
                         $idUser = $_SESSION['idUser'];
                         $sql = "SELECT COUNT(*) as rdvTotal7days
                                 FROM rendezvous
-                                WHERE id_users = $idUser
+                                WHERE id_user = $idUser
                                 AND date_fin > DATE_SUB(NOW(), INTERVAL -7 DAY);";
-                        $result2 = $this->connexion->mysqli->query($sql);
+                        $result2 = $this->db->mysqli->query($sql);
 
-                        foreach ($result2 as $data['rdvTotal7days']) {
-                                return $result2;
+                        foreach ($result2 as $data) {
+                                return $_SESSION['result2'] = $data['rdvTotal7days'];
                         }
                 }
         }
@@ -52,12 +52,12 @@ class statsRDV {
                         $idUser = $_SESSION['idUser'];
                         $sql = "SELECT COUNT(*) as nbrClientVu
                                 FROM rendezvous
-                                WHERE id_users = $idUser
+                                WHERE id_user = $idUser
                                 AND id_statut_rdv = 2;";
-                        $result3 = $this->connexion->mysqli->query($sql);
+                        $result3 = $this->db->mysqli->query($sql);
 
-                        foreach ($result3 as $data['nbrClientVu']) {
-                                return $result3;
+                        foreach ($result3 as $data) {
+                                return $_SESSION['result3'] = $data['nbrClientVu'];
                         }
                 }
         }
