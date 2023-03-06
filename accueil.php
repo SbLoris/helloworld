@@ -55,30 +55,41 @@
 
 <div class="blank"></div>
 
+<?php 
+  
+  echo("l'id profil est $idprofil"); 
+?>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  data = <?php print json_encode($data); ?>
+  let idprofil = <?php print json_encode ($_SESSION['id_profil']); ?>
+  
+  if (idprofil == 6) {
 
-  const ctx = document.getElementById('myChart');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Nombre de RDV', 'RDV 7 derniers jours', 'Clients vus'],
-      datasets: [{
-        label: '#RDV',
-        data: data,
-        backgroundColor:['#FF0000', '#00ff00', '#0000ff'],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+    data = <?php print json_encode($data); ?>
+
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Nombre de RDV', 'RDV 7 derniers jours', 'Clients vus'],
+        datasets: [{
+          label: '#RDV',
+          data: data,
+          backgroundColor:['#FF0000', '#00ff00', '#0000ff'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
         }
       }
-    }
-  });
+    });
+
+  }
 </script>
 
 <table border="1">
