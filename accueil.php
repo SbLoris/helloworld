@@ -55,11 +55,6 @@
 
 <div class="blank"></div>
 
-<?php 
-  
-  echo("l'id profil est $idprofil"); 
-?>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   let idprofil = <?php print json_encode ($_SESSION['id_profil']); ?>

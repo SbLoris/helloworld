@@ -85,6 +85,10 @@ nav a:hover {
     border: #FFC72C
 }
 
+#deco {
+    width: 10%;
+}
+
 img {
     width: 50%;
 }
