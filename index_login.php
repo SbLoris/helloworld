@@ -35,7 +35,7 @@
 </header>
 <body>
     
-	<form action="accueil.php" method="post">
+	<form action="accueil.php" method="post" class="login-mod">
 		<p>Nom d'utilisateur :</p>
 		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
          
