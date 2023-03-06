@@ -91,18 +91,27 @@
         </tr>
     </thead>
     <tbody>
-      <?php if ($req->derniersRDV->num_rows > 0): ?>
-        <?php while($row = $req->derniersRDV->fetch_assoc()): ?>
-          <tr>
-            <td><table>
-              <tr><td><?php echo($row["date_debut"]); ?></td></tr>
-              <tr><td><?php echo($row["date_fin"]); ?></td></tr>
-            </table></td>
-            <td><?php echo($row["nom_client"]); ?></td>
-            <td><?php echo($row["adresse_rdv"]); ?></td>
-            <td><?php echo($row["commentaire"]); ?></td>
-          </tr>
-        <?php endwhile; endif ?>
+        <?php if ($req->derniersRDV->num_rows > 0): ?>
+            <?php while($row = $req->derniersRDV->fetch_assoc()): ?>
+                <tr>
+                    <td>
+                        <table>
+                            <tr><td><?php echo($row["date_debut"]); ?></td></tr>
+                            <tr><td><?php echo($row["date_fin"]); ?></td></tr>
+                        </table>
+                    </td>
+                    <td><?php echo($row["nom_client"]); ?></td>
+                    <td><?php echo($row["adresse_rdv"]); ?></td>
+                    <td><?php echo($row["commentaire"]); ?></td>
+                    <td>
+                        <form action="rdv.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <input type="submit" value="Voir le rendez-vous">
+                        </form> 
+                    </td>
+                </tr>
+            <?php endwhile; endif ?>
     </tbody>
-  </table>
+</table>
+
 <?php include ("footer.php");?>
