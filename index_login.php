@@ -55,9 +55,11 @@
 	</div>
 
 	<?php
-		$_GET['login'] = $login;
-		if($login == "error") {
-			echo "Erreur de connexion";
+		if (isset($_GET['login'])) {
+			$login = $_GET['login'];
+			if($login == "error") {
+				echo "Erreur de connexion";
+			}
 		}
 	?>
     
