@@ -15,7 +15,7 @@
 <?php
   $req = new statsRDV();
   $prenom =  $_SESSION["prenom"];
-  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='message'>Bonjour $prenom</div>";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom</div>";
 
   $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];     
 ?>
@@ -92,7 +92,7 @@
   }
 </script>
 
-<table border="1">
+<table id="RDV" border="1">
     <thead>
         <tr>
             <th>Dates</th>
