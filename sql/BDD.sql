@@ -81,6 +81,36 @@ VALUES (
     'Terminé'
 );
 
+CREATE TABLE clients (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    adresse VARCHAR (100),
+    email VARCHAR (50),
+    telephone VARCHAR(20)
+);
+
+INSERT INTO clients (nom, prenom, adresse, email, telephone)
+VALUES (
+    'Bachelot',
+    'Tom',
+    '25 rue de la nonexistence',
+    'bachelot.tom@gmail.com',
+    '01 02 03 04 05'
+), (
+    'Brossard',
+    'Pierre',
+    '42 rue de la vie',
+    'brossard.pierre@yahoo.fr',
+    '05 04 03 02 01'
+), (
+    'Toto',
+    'Tata',
+    'AmenoTorino',
+    'toto.tata@laposte.net',
+    '01 23 45 67 89'
+);
+
 CREATE TABLE rendezvous (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     date_debut DATETIME,
@@ -90,11 +120,13 @@ CREATE TABLE rendezvous (
     commentaire VARCHAR(250),
     id_statut_rdv INT,
     id_user INT,
+    id_client INT,
+    FOREIGN KEY (id_statut_rdv) REFERENCES statut_rdv(id),
     FOREIGN KEY (id_user) REFERENCES users(id),
-    FOREIGN KEY (id_statut_rdv) REFERENCES statut_rdv(id)
+    FOREIGN KEY (id_client) REFERENCES clients(id)
 );
 
-INSERT INTO rendezvous (date_debut, date_fin, nom_client, adresse_rdv, commentaire, id_statut_rdv, id_user)
+INSERT INTO rendezvous (date_debut, date_fin, nom_client, adresse_rdv, commentaire, id_statut_rdv, id_user, id_client)
 VALUES (
     "2023-03-06 15:00:00",
     "2023-03-06 16:00:00",
@@ -102,7 +134,8 @@ VALUES (
     "Chez Paul",
     "Il est blond le type, il a l'air de pas avoir beaucoup d'argent, l'agent d'entretien va s'en occuper",
     1,
-    4
+    4,
+    1
 ), (
     "2023-03-06 15:00:00",
     "2023-03-06 16:00:00",
@@ -110,7 +143,8 @@ VALUES (
     "rdmAdresse",
     "oui",
     1,
-    4
+    4,
+    2
 ), (
     "2023-03-06 15:00:00",
     "2023-03-06 16:00:00",
@@ -118,7 +152,8 @@ VALUES (
     "tata",
     "oui",
     1,
-    4
+    4,
+    2
 ), (
     "2023-03-06 15:00:00",
     "2023-03-06 16:00:00",
@@ -126,7 +161,8 @@ VALUES (
     "rdmAdresse",
     "oui",
     2,
-    4
+    4,
+    2
 ), (
     "2023-10-06 15:00:00",
     "2023-10-06 16:00:00",
@@ -134,7 +170,8 @@ VALUES (
     "rdmAdresse",
     "oui",
     2,
-    4
+    4,
+    2
 ), (
     "2023-03-04 15:00:00",
     "2023-03-04 16:00:00",
@@ -142,7 +179,8 @@ VALUES (
     "rdmAdresse",
     "oui",
     2,
-    4
+    4,
+    2
 ), (
     "2023-03-05 15:00:00",
     "2023-03-05 16:00:00",
@@ -150,7 +188,8 @@ VALUES (
     "rdmAdresse",
     "oui",
     2,
-    4
+    4,
+    2
 ), (
     "2023-03-02 15:00:00",
     "2023-03-02 16:00:00",
@@ -158,10 +197,11 @@ VALUES (
     "rdmAdresse",
     "oui",
     2,
-    4
+    4,
+    2
 );
 
-CREATE TABLE usersRigths (
+CREATE TABLE usersrigths (
     id_profil INT,
     statsALL BOOLEAN,
     readALL BOOLEAN,
@@ -169,7 +209,7 @@ CREATE TABLE usersRigths (
     FOREIGN KEY (id_profil) REFERENCES profil(id)
 );
 
-INSERT INTO usersRigths (id_profil, statsALL, readALL, readTeam)
+INSERT INTO usersrigths (id_profil, statsALL, readALL, readTeam)
 VALUES (
     1,
     1,
@@ -201,3 +241,4 @@ VALUES (
     0,
     0
 );
+
