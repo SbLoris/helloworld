@@ -3,17 +3,27 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
     if($idUser == false) {
-      header("Location: index_login.php?=error");
+      echo "<link rel='stylesheet' href='css/style_accueil.css'><div class='erreur'>Identifiant ou mot de passe incorrect, merci de réessayer</div>";
+      echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='erreur'><a href='index_login.php'><button>Se reconnecter</button></a></div>";
       exit();
     }
 ?>
 <?php include ("header.php");?>
+<?php require_once("api/includeAll.php"); ?>
+
 <link rel="stylesheet" href="css/style_accueil.css">
+<<<<<<< HEAD
+ <div class="stats"></div>
+ <div class="planning"></div>
+ <div class="RDV"></div>
+ 
+=======
+>>>>>>> 1c08785d7b9718770f88968390a78e635b2266a4
 
 <?php
   new statsRDV();
   $prenom =  $_SESSION["prenom"];
-  echo "Bonjour $prenom";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='message'>Bonjour $prenom</div>";
 
   $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];     
 ?>

@@ -40,6 +40,9 @@ h1 {
   text-align: left; /* Pour aligner le texte à gauche */
   margin-left: 20px; /* Pour ajouter un peu d'espace entre l'image et le texte */
 }
+p{
+  font-weight: 600;
+}
   
   /* Styles pour le formulaire */
   
@@ -116,17 +119,13 @@ h1 {
   body .password-field {
     position: relative;
     }
-    body .password-field input {
-
    
- 
-    }
-    body .password-field input::placeholder {
-   
-    }
     body .password-field #toggler {
 
     transform: translateY(-50%);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    }
+    .creationCompte{
+      margin: 2.5rem;
     }
