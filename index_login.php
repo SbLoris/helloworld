@@ -55,8 +55,9 @@
 	</div>
 
 	<?php
-		if ("Location: index_login.php?=error"){
-			echo "Erreur de login";
+		$_GET['login'] = $login;
+		if($login == "error") {
+			echo "Erreur de connexion";
 		}
 	?>
     

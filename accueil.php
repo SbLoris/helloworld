@@ -3,7 +3,7 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
     if($idUser == false) {
-      header("Location: index_login.php?=error");
+      header("Location: index_login.php?login=error");
       exit();
     }
 ?>
