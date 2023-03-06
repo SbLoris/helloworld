@@ -115,7 +115,6 @@ CREATE TABLE rendezvous (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     date_debut DATETIME,
     date_fin DATETIME,
-    nom_client VARCHAR(50),
     adresse_rdv VARCHAR(50),
     commentaire VARCHAR(250),
     id_statut_rdv INT,
@@ -126,11 +125,10 @@ CREATE TABLE rendezvous (
     FOREIGN KEY (id_client) REFERENCES clients(id)
 );
 
-INSERT INTO rendezvous (date_debut, date_fin, nom_client, adresse_rdv, commentaire, id_statut_rdv, id_user, id_client)
+INSERT INTO rendezvous (date_debut, date_fin, adresse_rdv, commentaire, id_statut_rdv, id_user, id_client)
 VALUES (
     "2023-03-06 15:00:00",
     "2023-03-06 16:00:00",
-    "Tom Bachelot",
     "Chez Paul",
     "Il est blond le type, il a l'air de pas avoir beaucoup d'argent, l'agent d'entretien va s'en occuper",
     1,
@@ -139,7 +137,6 @@ VALUES (
 ), (
     "2023-03-06 14:00:00",
     "2023-03-06 15:00:00",
-    "Pierre",
     "rdmAdresse",
     "oui",
     1,
@@ -148,16 +145,14 @@ VALUES (
 ), (
     "2023-03-06 15:00:00",
     "2023-03-06 16:00:00",
-    "Toto",
     "tata",
     "oui",
     1,
     4,
-    2
+    3
 ), (
     "2023-03-06 15:00:00",
     "2023-03-06 16:00:00",
-    "Pierre",
     "rdmAdresse",
     "oui",
     2,
@@ -166,7 +161,6 @@ VALUES (
 ), (
     "2023-10-06 15:00:00",
     "2023-10-06 16:00:00",
-    "Pierre",
     "rdmAdresse",
     "oui",
     2,
@@ -175,7 +169,6 @@ VALUES (
 ), (
     "2023-03-04 15:00:00",
     "2023-03-04 16:00:00",
-    "Pierre",
     "rdmAdresse",
     "oui",
     2,
@@ -184,7 +177,6 @@ VALUES (
 ), (
     "2023-03-05 15:00:00",
     "2023-03-05 16:00:00",
-    "Pierre",
     "rdmAdresse",
     "oui",
     2,
@@ -193,7 +185,6 @@ VALUES (
 ), (
     "2023-03-02 15:00:00",
     "2023-03-02 16:00:00",
-    "Pierre",
     "rdmAdresse",
     "oui",
     2,
