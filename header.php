@@ -21,6 +21,7 @@
         <li><a href="#"><img src="img/logo.png" alt=""></a></li>
         <li><a href="#">Planning</a></li>
         <li><a href="#">Feuilles de suivies</a></li>
+        <li><a href="index_login.php" id="deco"><img src="img/deco.png" alt="Bouton de déconnexion" ></a></li>
     </ul>
 </nav>
 </div>

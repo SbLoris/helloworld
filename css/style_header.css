@@ -27,7 +27,7 @@ nav ul {
 
 nav li {
     float: left;
-    width: 20%;
+    width: 16%;
     /*100% divisé par le nombre d'éléments de menu*/
     text-align: center;
     /*Centre le texte dans les éléments de menu*/
@@ -74,6 +74,10 @@ nav a:hover {
 
 .navbar li ul li a {
     border: #FFC72C
+}
+
+#deco {
+    width: 10%;
 }
 
 img {
