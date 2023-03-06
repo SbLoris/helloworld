@@ -12,13 +12,10 @@
 <?php require_once("api/includeAll.php"); ?>
 
 <link rel="stylesheet" href="css/style_accueil.css">
-<<<<<<< HEAD
  <div class="stats"></div>
  <div class="planning"></div>
  <div class="RDV"></div>
  
-=======
->>>>>>> 1c08785d7b9718770f88968390a78e635b2266a4
 
 <?php
   new statsRDV();
