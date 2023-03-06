@@ -45,9 +45,12 @@
 <i id="toggler"class="fa-sharp fa-solid fa-eye-slash"></i> 
 </div>
 
-		
+		<div class="boutton">
 		<input type="submit" value="Se connecter">
+		</div>
+	<div class="mdp-forgot">
 		<a href="#">Mot de passe oublié ?</a>
+	</div>
 	</form>
 
     <div class="creationCompte">
@@ -58,7 +61,7 @@
 		if (isset($_GET['login'])) {
 			$login = $_GET['login'];
 			if($login == "error") {
-				echo "Erreur de connexion";
+				echo "<div class='error'>Mot de passe ou identifiant incorrect </div> ";
 			}
 		}
 	?>
