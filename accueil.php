@@ -3,7 +3,7 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
     if($idUser == false) {
-      header("Location: index_login.php?=error");
+      header("Location: index_login.php?login=error");
       exit();
     }
 ?>
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/style_accueil.css">
 
 <?php
-  new statsRDV();
+  $req = new statsRDV();
   $prenom =  $_SESSION["prenom"];
   echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='message'>Bonjour $prenom</div>";
 
@@ -80,4 +80,29 @@
     }
   });
 </script>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Dates</th>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Commentaire</th>
+        </tr>
+    </thead>
+    <tbody>
+      <?php if ($req->derniersRDV->num_rows > 0): ?>
+        <?php while($row = $req->derniersRDV->fetch_assoc()): ?>
+          <tr>
+            <td><table>
+              <tr><td><?php echo($row["date_debut"]); ?></td></tr>
+              <tr><td><?php echo($row["date_fin"]); ?></td></tr>
+            </table></td>
+            <td><?php echo($row["nom_client"]); ?></td>
+            <td><?php echo($row["adresse_rdv"]); ?></td>
+            <td><?php echo($row["commentaire"]); ?></td>
+          </tr>
+        <?php endwhile; endif ?>
+    </tbody>
+  </table>
 <?php include ("footer.php");?>

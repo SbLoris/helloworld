@@ -7,12 +7,14 @@ class statsRDV {
         public $totalRDV;
         public $totalRDV7days;
         public $totalClientVu;
+        public $derniersRDV;
     
         public function __construct() {
             $this->db = new DatabaseConnection();
             $this->totalRDV = $this->totalRDV();
             $this->totalRDV7days = $this->totalRDV7days();
             $this->totalClientVu = $this->totalClientVu();
+            $this->derniersRDV = $this->derniersRDV();
         }
     
         // Nombre de rendez-vous total pour l'agent connecté
@@ -59,6 +61,22 @@ class statsRDV {
                         foreach ($result3 as $data) {
                                 return $_SESSION['result3'] = $data['nbrClientVu'];
                         }
+                }
+        }
+
+        // X derniers RDV
+        public function derniersRDV() {
+                if (isset($_SESSION['idUser'])){
+                        $idUser = $_SESSION['idUser'];
+                        $sql = "SELECT *
+                                FROM rendezvous
+                                WHERE id_user = $idUser
+                                AND id_statut_rdv = 1
+                                ORDER BY date_debut ASC
+                                LIMIT 4;";
+                        $result = $this->db->mysqli->query($sql);
+
+                        return $result;
                 }
         }
 }
