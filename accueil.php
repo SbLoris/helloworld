@@ -3,8 +3,7 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
     if($idUser == false) {
-      echo "<link rel='stylesheet' href='css/style_accueil.css'><div class='erreur'>Identifiant ou mot de passe incorrect, merci de réessayer</div>";
-      echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='erreur'><a href='index_login.php'><button>Se reconnecter</button></a></div>";
+      header("Location: index_login.php?=error");
       exit();
     }
 ?>
@@ -12,10 +11,6 @@
 <?php require_once("api/includeAll.php"); ?>
 
 <link rel="stylesheet" href="css/style_accueil.css">
- <div class="stats"></div>
- <div class="planning"></div>
- <div class="RDV"></div>
- 
 
 <?php
   new statsRDV();
