@@ -3,8 +3,7 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
     if($idUser == false) {
-      echo "Identifiant ou mot de passe incorrect, merci de réessayer";
-      echo "<a href='index_login.php'><button>Se reconnecter</button></a>";
+      header("Location: index_login.php?=error");
       exit();
     }
 ?>
