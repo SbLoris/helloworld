@@ -36,7 +36,6 @@
 <body>
     
 	<form action="accueil.php" method="post">
-<<<<<<< HEAD
 		<p>Nom d'utilisateur :</p>
 		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
          
@@ -46,15 +45,6 @@
 <i id="toggler"class="fa-sharp fa-solid fa-eye-slash"></i> 
 </div>
 
-=======
-		<label for="username" class="custom-checkbox">Nom d'utilisateur :</label>
-		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
-         
-		<div class="password-field">
-			<input type="password" id="fakePassword" name="mdp" placeholder="Votre mot de passe" />
-			<i id="toggler"class="far fa-eye"></i>
-		</div>
->>>>>>> 1c08785d7b9718770f88968390a78e635b2266a4
 		
 		<input type="submit" value="Se connecter">
 		<a href="#">Mot de passe oublié ?</a>
