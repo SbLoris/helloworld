@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/style_accueil.css">
 
 <?php
-  new statsRDV();
+  $req = new statsRDV();
   $prenom =  $_SESSION["prenom"];
   echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='message'>Bonjour $prenom</div>";
 
