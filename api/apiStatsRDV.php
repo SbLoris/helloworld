@@ -61,5 +61,21 @@ class statsRDV {
                         }
                 }
         }
+
+        // X derniers RDV
+        public function derniersRDV() {
+                if (isset($_SESSION['idUser'])){
+                        $idUser = $_SESSION['idUser'];
+                        $sql = "SELECT *
+                                FROM rendezvous
+                                WHERE id_user = $idUser
+                                AND id_statut_rdv = 1
+                                ORDER BY date_debut ASC
+                                LIMIT 4;";
+                        $result = $this->db->mysqli->query($sql);
+
+                        return $result;
+                }
+        }
 }
 ?>
