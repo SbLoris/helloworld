@@ -19,16 +19,25 @@
   if ($_SESSION['id_profil'] == 6) {
     $req = new statsRDV();
     $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];  
-  } else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
-
-  } else if ($_SESSION['id_profil'] == 4) {
+  } 
+  
+  else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
+    $req = new statsAdmin();
+    include_once("inc/statsSecretaire.php");
+  } 
+  
+  else if ($_SESSION['id_profil'] == 4) {
     echo "On nous a rien demandé pour lui";
-  } else if ($_SESSION['id_profil'] == 3) {
+  } 
+  
+  else if ($_SESSION['id_profil'] == 3) {
     $req = new statsAdmin();
     $data = $req->statsAgentsManager();
     $count[] = $data['rdvFini'];
     $agent[] = $data['agent'];
-  } else if ($_SESSION['id_profil'] == 1) {
+  } 
+  
+  else if ($_SESSION['id_profil'] == 1) {
     $req = new statsAdmin();
     $data = [$_SESSION['allRDV'], $_SESSION['allRDV7Days']];
   }
@@ -73,15 +82,11 @@
 
 <?php 
   if ($_SESSION['id_profil'] == 6) {
-    include_once("js/statsAgent.php"); 
-  } else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
-
-  } else if ($_SESSION['id_profil'] == 4) {
-
+    include_once("inc/statsAgent.php"); 
   } else if ($_SESSION['id_profil'] == 3) {
-    include_once("js/statsManager.php");
+    include_once("inc/statsManager.php");
   } else if ($_SESSION['id_profil'] == 1) {
-    include_once("js/statsPresident.php"); 
+    include_once("inc/statsPresident.php"); 
   }
 ?>
 
