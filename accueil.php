@@ -115,7 +115,13 @@ body {
 
   if ($_SESSION['id_profil'] == 6) {
     $req = new statsRDV();
-    $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];  
+    $totalRDV = $req->totalRDV();
+    $totalRDV = $totalRDV['rdvTotal'];
+    $rdvTotal7days = $req->totalRDV7days();
+    $rdvTotal7days = $rdvTotal7days['rdvTotal7days'];
+    $nbrClientVu = $req->totalClientVu();
+    $nbrClientVu = $nbrClientVu['nbrClientVu'];
+    $data = [$totalRDV, $rdvTotal7days, $nbrClientVu];
   } 
   
   else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
@@ -136,7 +142,16 @@ body {
   
   else if ($_SESSION['id_profil'] == 1) {
     $req = new statsAdmin();
-    $data = [$_SESSION['allRDV'], $_SESSION['allRDV7Days']];
+    $allRDV = $req->allRDV();
+    $allRDV = $allRDV['allRDV'];
+    $allRDV7Days = $req->allRDV7Days();
+    $allRDV7Days = $allRDV7Days['allRDV7Days'];
+    $data = [$allRDV, $allRDV7Days];
+
+    $ranking = $req->rankingAgents();
+    $count[] = $ranking['rdvFini'];
+    $agent[] = $ranking['agent'];
+
     $nbr_clients = $req->countClients();
     $nbr_clients = $nbr_clients['nbr_clients'];
     echo("Le nombre total de clients est de $nbr_clients");
@@ -167,6 +182,10 @@ body {
                 <img src="https://medias.pourlascience.fr/api/v1/images/view/5a82ac868fe56f032c48000e/wide_1300/image.jpg" alt="">
                 <a href="#popup" class="button">Rendez-vous</a>
             </div>
+</div>
+
+<div class="container">
+  <canvas id="myOtherChart"></canvas>
 </div>
 
 <div class="blank"></div>
