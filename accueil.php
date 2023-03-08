@@ -2,18 +2,19 @@
 <?php
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
-    if($idUser == false) {
-      header("Location: index_login.php?login=error");
-      exit();
-    }
 ?>
-<?php include ("header.php");?>
-<?php require_once("api/includeAll.php"); ?>
+
+<?php include ("header.php");
+
+if (empty($_SESSION["idUser"])) {
+  header("location: index_login.php");
+}
+?>
 
 <link rel="stylesheet" href="css/style_accueil.css">
 <?php
   $prenom =  $_SESSION["prenom"];
-  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom</div>";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom<br> Content de vous revoir ! </div>";
 
   if ($_SESSION['id_profil'] == 6) {
     $req = new statsRDV();
@@ -91,9 +92,6 @@
     include_once("inc/statsPresident.php"); 
   }
 ?>
-                    </div>
-                </div>
-            </div>
-</div>
+<script src="./js/derniersRDV.js"></script>
 
 <?php include ("footer.php");?>

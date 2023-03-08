@@ -41,7 +41,7 @@ header img {
 
 /* Change the background color on mouse-over */
 
-.header a:hover {
+.header-right a:hover {
     background-color: #FFC72C;
     color: black;
     opacity: 70%;
@@ -50,9 +50,10 @@ header img {
 
 /* Style the active/current link*/
 
-.header a.active {
+.header-right a.active {
     background-color: #004F71;
     color: white;
+    opacity: 100%;
 }
 
 

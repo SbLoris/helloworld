@@ -23,35 +23,50 @@
     });
 </script>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Dates</th>
-            <th>Nom</th>
-            <th>Adresse</th>
-            <th>Commentaire</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if ($req->derniersRDV->num_rows > 0): ?>
-            <?php while($row = $req->derniersRDV->fetch_assoc()): ?>
-                <tr>
-                    <td>
-                        <table>
-                            <tr><td><?php echo($row["date_debut"]); ?></td></tr>
-                            <tr><td><?php echo($row["date_fin"]); ?></td></tr>
-                        </table>
-                    </td>
-                    <td><?php echo($row["pnom_client"]); ?></td>
-                    <td><?php echo($row["adresse_rdv"]); ?></td>
-                    <td><?php echo($row["commentaire"]); ?></td>
-                    <td>
-                        <form action="rdv.php" method="get">
-                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                            <input type="submit" value="Voir le rendez-vous">
-                        </form> 
-                    </td>
-                </tr>
-            <?php endwhile; endif ?>
-    </tbody>
-</table>
+<div border="1">
+      <div class = "thead">
+        <div class = "th">Dates</div>
+        <div class = "th">Nom</div>
+        <div class = "th">Adresse</div>
+        <div class = "th">Commentaire</div>
+      </div>
+    
+
+    <?php if ($req->derniersRDV->num_rows > 0): ?>
+      <?php while($row = $req->derniersRDV->fetch_assoc()): ?>
+        <form action="" method="POST" class="form">
+          <div class="godelete"><?php echo($row["id"]) ?></div>
+          <div class = "dates">
+            <div class = "start"><?php echo($row["date_debut"]); ?></div>
+            <div class = "end"><?php echo($row["date_fin"]); ?></div>
+          </div>
+          <div class = "name"><?php echo($row["pnom_client"]); ?></div>
+          <div class = "address"><?php echo($row["adresse_rdv"]); ?></div>
+          <div class = "commentary"><?php echo($row["commentaire"]); ?></div>
+          <div class="buttons">
+            <button class="modify">Modifier</button>
+            <button class="delete">Supprimer</button>
+            <input type="hidden" name="confirm" class="confirm" value="">
+          </div>
+        </form>
+    <?php endwhile; endif ?>
+      <form action="inc/rowAdd.php" method="POST" class="form">
+        <div class = "dates">
+          <input type="datetime-local" class = "start" name = 'addStart'>
+          <input type="datetime-local" class = "end" name = 'addEnd'>
+        </div>
+        <select name="client" class="selectClientTd">
+        <option value="0">Choisir un client:</option>
+        <?php if ($req->listeClients->num_rows > 0): ?>
+          <?php while($row = $req->listeClients->fetch_assoc()):?>
+            <option value="<?php echo($row['id']) ?>"><?php echo($row['nom'] . " " . $row['prenom']); ?></option>            
+          <?php endwhile; endif ?>
+          <option class = "addClient" value="addClient">Ajouter Client</option>  
+        </select>
+        <input class = "address" name = 'addAddress'>
+        <input class = "commentary" name = 'addCommentary'>
+        <button class="addClient">Ajouter</button>
+      </form>
+  </div>
+
+  

@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <tr>
          
   ';
-    echo "<td><a href='#' id='myLink'>" . $row["pnom_client"] . "</a></td>";
+    echo "<td><a href='#' class='myLink'>" . $row["pnom_client"] . "</a></td>";
     echo "<td>" . $row["date_debut"] . "</td>";
     echo "<td>" . $row["date_fin"] . "</td>";
     echo "<td>" . $row["adresse_rdv"] . "</td>";
@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo'</tr>
         </tbody>
 </table> </div>
-<div class="modal" id="myModal">
+<div class="modal" class="myModal">
   <div class="modal-content">
     <span class="close">&times;</span>
         <div class="photo-profil">
@@ -73,10 +73,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 		<p><strong>Téléphone :</strong>'. $row["telephone"] .'</p>
 	
   </div>
-</div>
-<script src="js/script.js"></script>';
+</div>';
     
 }
-
 ?>
+<script src="js/script.js"></script>
 <?php include ("footer.php");?>
