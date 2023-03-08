@@ -17,6 +17,7 @@
     <a class="active" href="#home">Home</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
+   <a href="accueil.php"> <img src="img/deco.png"></img></a>
   </div>
 </div>
 </header>
