@@ -11,6 +11,28 @@
 <?php require_once("api/includeAll.php"); ?>
 
 <link rel="stylesheet" href="css/style_accueil.css">
+<style>
+  :root {
+    --color: #333;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: blueviolet;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+</style>
 
 <?php
   $prenom =  $_SESSION["prenom"];
