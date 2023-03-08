@@ -40,6 +40,9 @@
   else if ($_SESSION['id_profil'] == 1) {
     $req = new statsAdmin();
     $data = [$_SESSION['allRDV'], $_SESSION['allRDV7Days']];
+    $nbr_clients = $req->countClients();
+    $nbr_clients = $nbr_clients['nbr_clients'];
+    echo("Le nombre total de clients est de $nbr_clients");
   }
 ?>
 

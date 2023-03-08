@@ -7,6 +7,7 @@ class statsAdmin {
     public $statsAgentsManager;
     public $rdvAllAgents;
     public $statsAllAgents;
+    public $countClients;
     public $allRDV;
     public $allRDV7Days;
     public $rankingAgents;
@@ -17,6 +18,7 @@ class statsAdmin {
         $this->statsAgentsManager = $this->statsAgentsManager();
         $this->rdvAllAgents = $this->rdvAllAgents();
         $this->statsAllAgents = $this->statsAllAgents();
+        $this->countClients = $this->countClients();
         $this->allRDV = $this->allRDV();
         $this->allRDV7Days = $this->allRDV7Days();
         $this->rankingAgents = $this->rankingAgents();
@@ -91,6 +93,21 @@ class statsAdmin {
 
                 foreach ($result as $data) {
                     return [$_SESSION['statsCountAllAgents'] = $data['rdvFini'], $_SESSION['statsAllAgents'] = $data['agent']];
+                }
+            }
+        }
+    }
+
+    public function countClients() {
+        if (isset($_SESSION['id_profil'])){
+            if ($_SESSION['id_profil'] == 1) {
+            $sql = "SELECT COUNT(*) AS nbr_clients
+                    FROM clients;";
+
+                $result = $this->db->mysqli->query($sql);
+
+                foreach ($result as $data) {
+                    return ['nbr_clients'=>$data['nbr_clients']];
                 }
             }
         }
