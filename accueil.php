@@ -3,6 +3,11 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
 ?>
+<<<<<<< HEAD
+<?php include ("header.php");?>
+<?php require_once("api/includeAll.php"); ?>
+<?php $page = 'accueil'; ?>
+=======
 
 <?php include ("header.php");
 
@@ -10,6 +15,7 @@ if (empty($_SESSION["idUser"])) {
   header("location: index_login.php");
 }
 ?>
+>>>>>>> 8fda2e35cc8e49c4cc32ff211fcdb62bd948fa93
 
 <link rel="stylesheet" href="css/style_accueil.css">
 <style>
@@ -112,7 +118,7 @@ body {
 
 <?php
   $prenom =  $_SESSION["prenom"];
-  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom</div>";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom<br> Content de vous revoir ! </div>";
 
   if ($_SESSION['id_profil'] == 6) {
     $req = new statsRDV();

@@ -146,3 +146,8 @@ h3 {
 .popup .cross:hover {
     color: #12FCF8;
 }
+.message{
+    color: #004F71;
+    margin: 2rem;
+    font-weight: 900;
+}
