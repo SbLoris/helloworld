@@ -42,9 +42,9 @@ header img {
 /* Change the background color on mouse-over */
 
 .header-right a:hover {
-    background-color: #FFC72C;
-    color: black;
-    opacity: 70%;
+    background-color: #004F71;
+    color: white;
+    opacity: 90%;
 }
 
 
