@@ -15,9 +15,3 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-// Ajout de l'événement pour fermer la modal si l'utilisateur clique en dehors de celle-ci
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
