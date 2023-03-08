@@ -1,0 +1,56 @@
+.godelete{
+    display: none;
+}
+
+.modale {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    bottom: 100px;
+    margin: 80px;
+    border: 2px solid black;
+    background-color:gray;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    display:none;
+}
+
+.thead {
+    display: flex;
+}
+
+.th {
+    border: 1px solid black;
+    width: 20rem;
+}
+
+.form {
+    display: flex;
+}
+
+.name, .address, .commentary, .agent, .team{
+    border: 1px solid black;
+    width: 20rem;
+    height: 5rem;
+}
+.dates {
+    display: flex;
+    flex-direction: column;
+}
+.start, .end{
+    border: 1px solid black;
+    width: 20rem;
+    height: 2.5rem;
+}
+
+.startTd, .endTd, .nameTd, .addressTd, .commentaryTd {
+    border: 1px solid black;
+    width: 20rem;
+}
+
+input{
+    width: 100%;
+    height: 100%;
+}
