@@ -24,15 +24,16 @@
 </script>
 
 <script>
-    data = <?php print json_encode($data); ?>
+    data = <?php print json_encode($count[0]); ?>;
+    labels = <?php print json_encode($agent[0]); ?>;
 
-    const ctx = document.getElementById('myChart');
-    new Chart(ctx, {
+    const ctxs = document.getElementById('myOtherChart');
+    new Chart(ctxs, {
       type: 'bar',
       data: {
-        labels: ['Nombre de RDV total', 'Total RDV des 7 derniers jours'],
+        labels: labels,
         datasets: [{
-          label: '#RDV',
+          label: 'Classement des agents',
           data: data,
           backgroundColor:['#FF0000', '#00ff00', '#0000ff'],
           borderWidth: 1

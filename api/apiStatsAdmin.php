@@ -6,7 +6,6 @@ class statsAdmin {
     public $rdvAgentsManager;
     public $statsAgentsManager;
     public $rdvAllAgents;
-    public $statsAllAgents;
     public $countClients;
     public $allRDV;
     public $allRDV7Days;
@@ -17,7 +16,6 @@ class statsAdmin {
         $this->rdvAgentsManager = $this->rdvAgentsManager();
         $this->statsAgentsManager = $this->statsAgentsManager();
         $this->rdvAllAgents = $this->rdvAllAgents();
-        $this->statsAllAgents = $this->statsAllAgents();
         $this->countClients = $this->countClients();
         $this->allRDV = $this->allRDV();
         $this->allRDV7Days = $this->allRDV7Days();
@@ -55,7 +53,6 @@ class statsAdmin {
                 $result = $this->db->mysqli->query($sql);
 
                 foreach ($result as $data) {
-                    // return [$_SESSION['statsCountAgentsManager'] = $data['rdvFini'], $_SESSION['statsAgentsManager'] = $data['agent']];
                     return ['rdvFini'=>$data['rdvFini'], 'agent'=>$data['agent']];
                 }
             }
@@ -76,24 +73,6 @@ class statsAdmin {
 
                 return $result;
                 
-            }
-        }
-    }
-
-    public function statsAllAgents() {
-        if (isset($_SESSION['id_profil'])){
-            if ($_SESSION['id_profil'] == 2 || $_SESSION['id_profil'] == 5) {
-                $sql = "SELECT COUNT(*) AS rdvFini, CONCAT(U.nom, ' ', U.prenom) AS agent
-                FROM rendezvous RV
-                LEFT JOIN users U ON U.id = RV.id_user
-                WHERE id_statut_rdv = 2
-                GROUP BY id_user;";
-
-                $result = $this->db->mysqli->query($sql);
-
-                foreach ($result as $data) {
-                    return [$_SESSION['statsCountAllAgents'] = $data['rdvFini'], $_SESSION['statsAllAgents'] = $data['agent']];
-                }
             }
         }
     }
@@ -122,7 +101,7 @@ class statsAdmin {
                 $result = $this->db->mysqli->query($sql);
 
                 foreach ($result as $data) {
-                        return $_SESSION['allRDV'] = $data['allRDV'];
+                    return $data;
                 }
             }
         }
@@ -138,7 +117,7 @@ class statsAdmin {
                 $result = $this->db->mysqli->query($sql);
 
                 foreach ($result as $data) {
-                        return $_SESSION['allRDV7Days'] = $data['allRDV7Days'];
+                    return $data;
                 }
             }
         }
@@ -150,13 +129,18 @@ class statsAdmin {
             $sql = "SELECT COUNT(*) AS rdvFini, CONCAT (nom, ' ', prenom) AS agent
                     FROM rendezvous RV
                     LEFT JOIN users U ON RV.id_user = U.id
-                    WHERE RV.id_statut_rdv = 2;";
+                    WHERE RV.id_statut_rdv = 2
+                    GROUP BY RV.id_user;";
 
                 $result = $this->db->mysqli->query($sql);
 
+                $rdvFini = [];
+                $agent = [];
                 foreach ($result as $data) {
-                        return [$_SESSION['rdvFini'] = $data['rdvFini'], $_SESSION['rankingAgents'] = $data['agent']];
+                    $rdvFini[] = $data['rdvFini'];
+                    $agent[] = $data ['agent'];
                 }
+                return ['rdvFini'=>$rdvFini, 'agent'=>$agent];
             }
         }
     }
