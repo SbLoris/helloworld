@@ -17,7 +17,12 @@
     <a class="active" href="#home">Home</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
-   <a href="logout.php"> <img src="img/deco.png"></img></a>
+    <?php 
+      if ($_SESSION['id_profil'] == 1) {
+        echo "<a href='equipe.php'>Gérer les équipes</a>";
+      }
+    ?>
+    <a href="logout.php"> <img src="img/deco.png"></img></a>
   </div>
 </div>
 </header>
