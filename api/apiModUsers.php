@@ -1,7 +1,7 @@
 <?php
 require_once("connectDB.php");
 
-class statsAdmin {
+class modUsers {
 
     private $db;
     public $seeAllClients;
