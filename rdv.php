@@ -13,7 +13,7 @@ else {
 
 // Récupérer les informations du rendez-vous depuis votre base de données en utilisant $id_rendezvous
 $mysqli = new DatabaseConnection();
-$result = mysqli_query($mysqli->mysqli, "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire, C.email, C.adresse, C.telephone FROM rendezvous RV LEFT JOIN clients C ON RV.id_client = C.id WHERE RV.id_client = $id ");
+$result = mysqli_query($mysqli->mysqli, "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone FROM rendezvous RV LEFT JOIN clients C ON RV.id_client = C.id WHERE RV.id_client = $id ");
 
 
 
@@ -39,6 +39,8 @@ while ($row = mysqli_fetch_assoc($result)) {
             <th>Date fin</th>
             <th>Adresse</th>
             <th>Commentaire</th>
+            <th>Statut RDV</th>
+
         </tr>
     </thead>
     <tbody>
@@ -50,14 +52,21 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>" . $row["date_fin"] . "</td>";
     echo "<td>" . $row["adresse_rdv"] . "</td>";
     echo "<td>" . $row["commentaire"] . "</td>";
+    echo "<td>";
+    if ($row["id_statut_rdv"] == 1) {
+        echo "Rendez-vous en cours";
+      } else if ($row["id_statut_rdv"] == 2) {
+        echo "Rendez-vous terminé";
+      };
     echo'</tr>
         </tbody>
 </table> </div>
 <div class="modal" id="myModal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    
+        <div class="photo-profil">
 		<img src="https://via.placeholder.com/150" alt="Photo de profil">
+        </div>
 		<h1>' . $row["pnom_client"] . '</h1>
 		<p><strong>Adresse :</strong> '. $row["adresse"] .'</p>
 		<a href="mailto:'. $row["email"] .'"><strong>Email :</strong> '. $row["email"] .'</a>

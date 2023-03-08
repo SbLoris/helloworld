@@ -11,6 +11,12 @@ body {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	background-color: #fff;
 	text-align: center;
+	
+	display: inline-block;
+	
+}
+.card-container{
+	display: flex;
 }
 
 .card img {
@@ -24,9 +30,12 @@ h1 {
 	margin-bottom: 10px;
 }
 
-p {
+p
+ {
 	margin-bottom: 5px;
 }
+
+
 
 strong {
 	font-weight: bold;
@@ -34,7 +43,12 @@ strong {
 .card a{
     text-decoration: none;
     color: black;
+	margin-bottom: 1rem;
 } 
 .card a:hover{
  color: #FFC72C;
+}
+.modifier{
+	display: flex;
+	justify-content: end;
 }
