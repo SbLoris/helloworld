@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style_header.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <title>Jules imobilier</title>
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <header>
 <div class="header">

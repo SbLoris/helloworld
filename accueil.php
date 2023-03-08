@@ -11,6 +11,28 @@
 <?php require_once("api/includeAll.php"); ?>
 
 <link rel="stylesheet" href="css/style_accueil.css">
+<style>
+  :root {
+    --color: #333;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: blueviolet;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+</style>
 
 <?php
   $prenom =  $_SESSION["prenom"];
@@ -19,53 +41,40 @@
   if ($_SESSION['id_profil'] == 6) {
     $req = new statsRDV();
     $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];  
-  } else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
-
-  } else if ($_SESSION['id_profil'] == 4) {
+  } 
+  
+  else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
+    $req = new statsAdmin();
+    include_once("inc/statsSecretaire.php");
+  } 
+  
+  else if ($_SESSION['id_profil'] == 4) {
     echo "On nous a rien demandé pour lui";
-  } else if ($_SESSION['id_profil'] == 3) {
+  } 
+  
+  else if ($_SESSION['id_profil'] == 3) {
     $req = new statsAdmin();
     $data = $req->statsAgentsManager();
     $count[] = $data['rdvFini'];
     $agent[] = $data['agent'];
-  } else if ($_SESSION['id_profil'] == 1) {
+  } 
+  
+  else if ($_SESSION['id_profil'] == 1) {
     $req = new statsAdmin();
     $data = [$_SESSION['allRDV'], $_SESSION['allRDV7Days']];
+    $nbr_clients = $req->countClients();
+    $nbr_clients = $nbr_clients['nbr_clients'];
+    echo("Le nombre total de clients est de $nbr_clients");
   }
 ?>
 
 <div class="container">
-  <canvas id="myChart"></canvas>
+  <canvas id="myChart"width="500" height="100"></canvas>
+  <div class="menu">
+  </div>
 </div>
 
 <div class="blank"></div>
-
-<div class="container second">
-  <div class="item">
-    <div class="img img-first"></div>
-    <div class="card">
-      <h3>Jules Immobilier</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga aut facilis harum dolorum, omnis optio!</p>
-      <a href="#">En savoir plus</a>
-    </div>
-  </div>
-  <div class="item">
-    <div class="img img-second"></div>
-    <div class="card">
-      <h3>Jules immobilier</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, numquam!</p>
-      <a href="#">En savoir plus</a>
-    </div>
-  </div>
-  <div class="item">
-    <div class="img img-third"></div>
-    <div class="card">
-      <h3>Jules immobilier</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vel!</p>
-      <a href="#">En savoir plus</a>
-    </div>
-  </div>
-</div>
 
 <div class="blank"></div>
 
@@ -73,15 +82,11 @@
 
 <?php 
   if ($_SESSION['id_profil'] == 6) {
-    include_once("js/statsAgent.php"); 
-  } else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
-
-  } else if ($_SESSION['id_profil'] == 4) {
-
+    include_once("inc/statsAgent.php"); 
   } else if ($_SESSION['id_profil'] == 3) {
-    include_once("js/statsManager.php");
+    include_once("inc/statsManager.php");
   } else if ($_SESSION['id_profil'] == 1) {
-    include_once("js/statsPresident.php"); 
+    include_once("inc/statsPresident.php"); 
   }
 ?>
 
