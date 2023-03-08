@@ -45,10 +45,12 @@ header img{
 }
 
 /* Style the active/current link*/
-.header a.active {
-  background-color: #004F71;
-  color: white;
-}
+
+.header-right a.active {
+    background-color: #004F71;
+    color: white;
+    opacity: 100%;
+  }
 
 /* Float the link section to the right */
 .header-right {

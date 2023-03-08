@@ -8,6 +8,7 @@ if (isset($_GET['id'])) {
 
 $mysqli = new DatabaseConnection();
 $result = mysqli_query($mysqli->mysqli, "SELECT id, nom, prenom, adresse, email, telephone FROM clients ");
+$page = 'nom_de_la_page'; 
 if (!$result) {
     die('Erreur dans la requête : ' . mysqli_error($mysqli->mysqli));
 }

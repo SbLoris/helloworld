@@ -9,6 +9,7 @@
 ?>
 <?php include ("header.php");?>
 <?php require_once("api/includeAll.php"); ?>
+<?php $page = 'accueil'; ?>
 
 <link rel="stylesheet" href="css/style_accueil.css">
 <style>
@@ -111,7 +112,7 @@ body {
 
 <?php
   $prenom =  $_SESSION["prenom"];
-  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom</div>";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom<br> Content de vous revoir ! </div>";
 
   if ($_SESSION['id_profil'] == 6) {
     $req = new statsRDV();
