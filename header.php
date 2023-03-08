@@ -15,10 +15,6 @@
   <a href="accueil.php"><img src="img/logo.png" class="logo"></img></a>
   
   <div class="header-right">
-<<<<<<< HEAD
-  <a class="<?php if ($page == 'accueil') {echo 'active';} ?>" href="accueil.php">Accueil</a>
-  <a class="<?php if ($page == 'client') {echo 'active';} ?>" href="client.php">Clients</a>
-=======
   <a class="class" href="accueil.php">Accueil</a>
   <a class="client" href="client.php">Clients</a>
   <?php 
@@ -26,7 +22,6 @@
         echo "<a href='equipe.php'>Gérer les équipes</a>";
       }
   ?>
->>>>>>> 7e6af352d92962644854989cbc9df2eacd507a01
   <a href="logout.php"><img src="img/deco.png" alt="Déconnexion"></a>
 </div>
 </div>
