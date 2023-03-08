@@ -109,3 +109,9 @@ h3 {
     flex-direction: row;
     gap: 1.6em;
 }
+
+#RDV {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

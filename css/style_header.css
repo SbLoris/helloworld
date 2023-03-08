@@ -1,8 +1,3 @@
-body {
-    background: rgb(185, 185, 185);
-}
-
-
 /*Reset CSS*/
 
 * {
@@ -12,6 +7,7 @@ body {
 }
 
 nav {
+    max-width: 1200px;
     width: 100%;
     margin: 0px auto 40px auto;
     background-color: white;
@@ -57,14 +53,9 @@ nav a:hover {
 }
 
 .navbar {
-    overflow: hidden;
-    background-color: #ffffff;
     position: fixed;
-    /* Set the navbar to fixed position */
     top: 0;
-    /* Position the navbar at the top of the page */
-    width: 100%;
-    /* Full width */
+    left: 0;
 }
 
 .navbar li ul {
@@ -85,8 +76,8 @@ nav a:hover {
     border: #FFC72C
 }
 
-#deco {
-    width: 10%;
+.deco #deco {
+    width: 30%;
 }
 
 img {
