@@ -8,6 +8,7 @@ class statsRDV {
         public $totalRDV7days;
         public $totalClientVu;
         public $derniersRDV;
+        public $listeClients;
     
         public function __construct() {
             $this->db = new DatabaseConnection();
@@ -15,6 +16,8 @@ class statsRDV {
             $this->totalRDV7days = $this->totalRDV7days();
             $this->totalClientVu = $this->totalClientVu();
             $this->derniersRDV = $this->derniersRDV();
+            $this->listeClients = $this->listeClients();
+            
         }
     
         // Nombre de rendez-vous total pour l'agent connecté
@@ -79,6 +82,14 @@ class statsRDV {
 
                         return $result;
                 }
+        }
+
+        // Liste clients
+        public function listeClients() {
+                $sql = "SELECT *
+                        FROM clients";
+                $result = $this->db->mysqli->query($sql);
+                return $result;
         }
 }
 ?>

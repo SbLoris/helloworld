@@ -89,5 +89,6 @@
     include_once("inc/statsPresident.php"); 
   }
 ?>
+<script src="./js/derniersRDV.js"></script>
 
 <?php include ("footer.php");?>
