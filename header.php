@@ -22,6 +22,7 @@
         
         <li><a href="#">Planning</a></li>
         <li><a href="#">Feuilles de suivies</a></li>
+        <div class="deco">
         <li id="deco"><a href="index_login.php"><img src="img/deco.png" alt=""></a></li></div>
     </ul>
 </nav>
