@@ -44,37 +44,26 @@
 ?>
 
 <div class="container">
-  <canvas id="myChart"></canvas>
+  <canvas id="myChart"width="500" height="100"></canvas>
+  <div class="menu">
+  <ul class="navbar">
+    <li><a href="accueil.php"><img src="img/logo.png" alt=""></a></li>
+        <li><a href="#RDV">RDV</a>
+        <!--<ul>
+            <li><a href="#">Récents</a></li>
+            <li><a href="#">A venir</a></li>
+        </ul>--></li>
+        <li><a href="#stats">Statistiques</a></li>
+        
+        <li><a href="#">Planning</a></li>
+        <li><a href="#">Feuilles de suivies</a></li>
+        <div class="deco">
+        <li id="deco"><a href="index_login.php"><img src="img/deco.png" alt=""></a></li></div>
+    </ul>
+  </div>
 </div>
 
 <div class="blank"></div>
-
-<div class="container second">
-  <div class="item">
-    <div class="img img-first"></div>
-    <div class="card">
-      <h3>Jules Immobilier</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga aut facilis harum dolorum, omnis optio!</p>
-      <a href="#">En savoir plus</a>
-    </div>
-  </div>
-  <div class="item">
-    <div class="img img-second"></div>
-    <div class="card">
-      <h3>Jules immobilier</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, numquam!</p>
-      <a href="#">En savoir plus</a>
-    </div>
-  </div>
-  <div class="item">
-    <div class="img img-third"></div>
-    <div class="card">
-      <h3>Jules immobilier</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vel!</p>
-      <a href="#">En savoir plus</a>
-    </div>
-  </div>
-</div>
 
 <div class="blank"></div>
 
