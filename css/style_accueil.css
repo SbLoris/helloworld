@@ -8,7 +8,9 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
 }
 
 .menu {
@@ -16,31 +18,11 @@ body {
     flex-direction: column;
 }
 
-
-/* Début Page */
-
-.page .ligne {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 25px;
-    flex-wrap: wrap;
-}
-
-.page .ligne img {
-    margin: 40px;
-    border-radius: 10%;
-    cursor: pointer;
-    transition-duration: 1s;
-}
-
-.page .ligne img:hover {
-    transform: scale(1.5);
-}
-
 .produit img {
     border-radius: 10%;
     cursor: pointer;
+    width: 400px;
+    height: 250px;
 }
 
 .produit {
@@ -50,23 +32,28 @@ body {
     font-family: Arial, Helvetica;
 }
 
-
-/*Fin Page*/
-
 .button {
     text-align: center;
     font-size: 1.3rem;
-    padding: 0.5rem;
+    padding: 1rem;
     color: #fff;
     border-radius: 20px/50px;
     text-decoration: none;
     cursor: pointer;
-    background: #34495e;
     transition: all 0.3s ease-out;
 }
 
+#Stats {
+    background: url('https://medias.pourlascience.fr/api/v1/images/view/5a82ac868fe56f032c48000e/wide_1300/image.jpg');
+}
+
+#RDV {
+    background: url("https://www.ville-palaiseau.fr/fileadmin/_processed_/b/4/csm_Bandeau_prendre_rendez-vous_ae8e2e2103.jpg");
+    padding: 1rem;
+}
+
 .button:hover {
-    background: #9C2F51;
+    transform: scale(1.1);
 }
 
 .overlay {
@@ -110,5 +97,5 @@ body {
 }
 
 .popup .cross:hover {
-    color: #12FCF8;
+    color: #004F71;
 }
