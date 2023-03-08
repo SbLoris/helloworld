@@ -39,3 +39,87 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
 	background-color: #ddd;
 }
+/* Style du lien */
+#myLink {
+	text-decoration: none;
+	color: blue;
+	cursor: pointer;
+  }
+  
+  /* Style de la modal */
+  .modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 30rem;
+	margin: 50px auto;
+	padding: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+	text-align: center;
+  }
+  .modal img{
+	border-radius: 50%;
+	margin-bottom: 20px;
+
+  }
+  .img-modal{
+	display: flex;
+	justify-content: center;
+  }
+  
+  /* Style du contenu de la modal */
+  .modal-content {
+	background-color: white;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+  }
+  
+  /* Style du bouton de fermeture */
+  .close {
+	
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	display: flex;
+	justify-content: end;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+p {
+	margin-bottom: 5px;
+}
+
+strong {
+	font-weight: bold;
+}
+.modal a{
+    text-decoration: none;
+    color: black;
+	margin-bottom: 1rem;
+} 
+.modal a:hover{
+ color: #FFC72C;
+}
+  
