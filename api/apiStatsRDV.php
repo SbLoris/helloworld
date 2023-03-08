@@ -68,11 +68,12 @@ class statsRDV {
         public function derniersRDV() {
                 if (isset($_SESSION['idUser'])){
                         $idUser = $_SESSION['idUser'];
-                        $sql = "SELECT *
-                                FROM rendezvous
-                                WHERE id_user = $idUser
-                                AND id_statut_rdv = 1
-                                ORDER BY date_debut ASC
+                        $sql = "SELECT RV.id, RV.date_debut, RV.date_fin, CONCAT(C.nom, ' ', C.prenom) AS pnom_client, RV.adresse_rdv, RV.commentaire
+                                FROM rendezvous RV
+                                LEFT JOIN clients C ON RV.id_client = C.id
+                                WHERE RV.id_user = $idUser
+                                AND RV.id_statut_rdv = 1
+                                ORDER BY RV.date_debut ASC
                                 LIMIT 4;";
                         $result = $this->db->mysqli->query($sql);
 
