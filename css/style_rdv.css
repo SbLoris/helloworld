@@ -69,6 +69,10 @@ tbody tr:hover {
 	margin-bottom: 20px;
 
   }
+  .photo-profil{
+	display: flex;
+	justify-content: center;
+  }
   .img-modal{
 	display: flex;
 	justify-content: center;

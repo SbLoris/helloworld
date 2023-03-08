@@ -9,21 +9,13 @@
     <title>Jules imobilier</title>
 </head>
 <header>
-    <div class="wrap">
-    <nav>
-  <ul class="navbar">
-    <li><a href="#"><img src="img/logo.png" alt=""></a></li>
-        <li><a href="#RDV">RDV</a>
-        <ul>
-            <li><a href="#">Récents</a></li>
-            <li><a href="#">A venir</a></li>
-        </ul></li>
-        <li><a href="#stats">Statistiques</a></li>
-        
-        <li><a href="#">Planning</a></li>
-        <li><a href="#">Feuilles de suivies</a></li>
-        <li id="deco"><a href="index_login.php"><img src="img/deco.png" alt=""></a></li></div>
-    </ul>
-</nav>
+<div class="header">
+  <img src="img/logo.png" class="logo"></img>
+  
+  <div class="header-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
 </div>
 </header>

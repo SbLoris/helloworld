@@ -5,9 +5,7 @@ include("header.php");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
-else {
-  echo'Aucune informations concernant ce client';  
-}
+
 $mysqli = new DatabaseConnection();
 $result = mysqli_query($mysqli->mysqli, "SELECT id, nom, prenom, adresse, email, telephone FROM clients ");
 if (!$result) {
@@ -21,19 +19,17 @@ echo'
 	<link rel="stylesheet" type="text/css" href="css/style_client.css">
 </head>
 <body>
+	<div class="card-container">
 	<div class="card">
 		<img src="https://via.placeholder.com/150" alt="Photo de profil">
-		<h1>" . $row["pnom_client"] . "</h1>
+		<h1>' . $row["nom"] . ' ' . $row["prenom"] . '</h1>
 		<p><strong>Adresse :</strong> '. $row["adresse"] .'</p>
 		<a href="mailto:'. $row["email"] .'"><strong>Email :</strong> '. $row["email"] .'</a>
 		<p><strong>Téléphone :</strong>'. $row["telephone"] .'</p>
+		<a class="modifier" href="#">Modifier </a>
 	</div>
-    <div class="modal" id="myModal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Contenu de la modal ici...</p>
-  </div>
-</div>
+	</div>
+  
 </body>
 </html>';
 }
