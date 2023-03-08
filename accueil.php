@@ -74,9 +74,7 @@ body {
   </div>
 </div>
 
-<div class="blank"></div>
 
-<div class="blank"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

@@ -11,7 +11,7 @@
 </head>
 <header>
 <div class="header">
-  <img src="img/logo.png" class="logo"></img>
+  <a href="#"><img src="img/logo.png" class="logo"></img></a>
   
   <div class="header-right">
     <a class="active" href="#home">Home</a>
