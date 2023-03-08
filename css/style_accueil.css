@@ -4,7 +4,6 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: white;
 }
 
 .container {
@@ -12,93 +11,104 @@ body {
     flex-direction: column;
 }
 
-h1 {
-    font-weight: 700;
-    font-size: 3rem;
+.menu {
+    display: flex;
+    flex-direction: column;
 }
 
-p {
-    max-width: 52ch;
-    line-height: 1.5;
-    padding: 1em;
-}
 
-.container-second a {
-    display: inline-block;
-    padding: 1em 3.5em;
-    background-color: var(--color);
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 0.3em;
-    font-weight: 700;
-    letter-spacing: .5px;
-    font-size: .875rem;
-}
+/* Début Page */
 
-.blank,
-.other {
-    width: 100%;
-    min-height: 60vh;
-    background-color: var(--color);
-}
-
-.second {
-    background-image: url(https://www.maisons-mca.com/wp-content/uploads/les-plus-belles-maisons-contemporaines-des-exemples.jpg);
-    background-attachment: fixed;
-    height: 1200px;
-}
-
-h3 {
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin-top: 1em;
-}
-
-.card>a {
-    margin-bottom: 2em;
-}
-
-.erreur {
-    text-align: center;
-    font-size: 25;
-}
-
-.message {
-    text-align: center;
-    font-size: 25px;
-}
-
-#RDV {
-    text-align: center;
-    justify-content: center;
+.page .ligne {
+    display: flex;
     align-items: center;
-    border-radius: .5em;
-    -webkit-box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
-    -moz-box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
-    box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
+    justify-content: center;
+    padding-top: 25px;
+    flex-wrap: wrap;
 }
 
-.img {
-    width: 90%;
-    height: 200px;
-    background-color: lightgrey;
-    background-size: cover;
-    margin-top: 20px;
-    border-radius: .3em;
-    ;
+.page .ligne img {
+    margin: 40px;
+    border-radius: 10%;
+    cursor: pointer;
+    transition-duration: 1s;
 }
 
-.img-second {
-    background-image: url(https://www.maisons-mca.com/wp-content/uploads/les-plus-belles-maisons-contemporaines-des-exemples.jpg);
+.page .ligne img:hover {
+    transform: scale(1.5);
 }
 
-.img-third {
-    background-image: url(https://www.maisons-mca.com/wp-content/uploads/les-plus-belles-maisons-contemporaines-des-exemples.jpg);
+.produit img {
+    border-radius: 10%;
+    cursor: pointer;
 }
 
-.second {
-    flex-direction: row;
-    gap: 1.6em;
+.produit {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    font-family: Arial, Helvetica;
 }
 
+
+/*Fin Page*/
+
+.button {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #34495e;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background: #9C2F51;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity .4s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    text-align: center;
+    margin: 6rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+.popup .cross {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+    font-family: Arial, Helvetica;
+}
+
+.popup .cross:hover {
+    color: #12FCF8;
+}

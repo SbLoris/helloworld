@@ -18,7 +18,6 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: blueviolet;
 }
 
 .container {
@@ -32,33 +31,11 @@ body {
     flex-direction: column;
 }
 
-
-
-
-/* Début Page */
-
-.page .ligne {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 25px;
-    flex-wrap: wrap;
-}
-
-.page .ligne img {
-    margin: 40px;
-    border-radius: 10%;
-    cursor: pointer;
-    transition-duration: 1s;
-}
-
-.page .ligne img:hover {
-    transform: scale(1.5);
-}
-
 .produit img {
     border-radius: 10%;
     cursor: pointer;
+    width: 400px;
+    height: 250px;
 }
 
 .produit {
@@ -68,9 +45,6 @@ body {
     font-family: Arial, Helvetica;
 }
 
-
-/*Fin Page*/
-
 .button {
     text-align: center;
     font-size: 1.3rem;
@@ -79,7 +53,7 @@ body {
     border-radius: 20px/50px;
     text-decoration: none;
     cursor: pointer;
-    background: #34495e;
+    background: url('https://medias.pourlascience.fr/api/v1/images/view/5a82ac868fe56f032c48000e/wide_1300/image.jpg');
     transition: all 0.3s ease-out;
 }
 
@@ -178,28 +152,20 @@ body {
         <li><a href="#">Planning</a></li>
         <li><a href="#">Feuilles de suivies</a></li>
     </ul>
-    <div class="ligne">
             <div class="produit">
-                <img src="https://www.ville-palaiseau.fr/fileadmin/_processed_/b/4/csm_Bandeau_prendre_rendez-vous_ae8e2e2103.jpg" alt="">
-                <a href="#popup" class="button">Rendez-vous</a>
+                <a href="#popup" class="button"><h1>Statistiques</h1></a>
 
                 <div id="popup" class="overlay">
                     <div class="popup">
-                        <h2>SWX-78</h2>
+                        <h2>Statistiques</h2>
                         <a href="#" class="cross">&times;</a>
-                        <img src="https://www.bmc-switzerland.com/media/catalog/product/cache/db486834651b8299de17894045ea7cde/b/m/bmc-22-10507-004-bmc-speedfox-al-two-mountain-bike-green-01.png" alt="" width="50%">
-                        <p>Un cadre en aluminium léger, avec un revêtement poudre durable haut de gamme et une géométrie dédiée aux cyclistes en herbe. Doté de roues 20", d’un groupe SRAM 8 vitesses et de freins TEKTRO, il inspire confiance avec son ergonomie
-                            adaptée. Simple. Fonctionnel. Le plaisir. </p>
+                        <canvas id="myChart"width="500" height="100"></canvas>
                     </div>
                 </div>
             </div>
             <div class="produit">
                 <img src="https://medias.pourlascience.fr/api/v1/images/view/5a82ac868fe56f032c48000e/wide_1300/image.jpg" alt="">
-                <a href="#popup" class="button">Statistiques</a>
-
-                <div id="popup" class="overlay">
-                <canvas id="myChart"width="500" height="100"></canvas>
-                </div>
+                <a href="#popup" class="button">Rendez-vous</a>
             </div>
 </div>
 
