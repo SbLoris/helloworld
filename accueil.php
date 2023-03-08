@@ -14,7 +14,7 @@
 
 <?php
   $prenom =  $_SESSION["prenom"];
-  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='message'>Bonjour $prenom</div>";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom</div>";
 
   if ($_SESSION['id_profil'] == 6) {
     $req = new statsRDV();

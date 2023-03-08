@@ -12,15 +12,17 @@
     <div class="wrap">
     <nav>
   <ul class="navbar">
-        <li><a href="#">RDV</a>
+    <li><a href="#"><img src="img/logo.png" alt=""></a></li>
+        <li><a href="#RDV">RDV</a>
         <ul>
             <li><a href="#">Récents</a></li>
             <li><a href="#">A venir</a></li>
         </ul></li>
-        <li><a href="#">Statistiques</a></li>
-        <li><a href="#"><img src="img/logo.png" alt=""></a></li>
+        <li><a href="#stats">Statistiques</a></li>
+        
         <li><a href="#">Planning</a></li>
         <li><a href="#">Feuilles de suivies</a></li>
+        <li id="deco"><a href="index_login.php"><img src="img/deco.png" alt=""></a></li></div>
     </ul>
 </nav>
 </div>
