@@ -13,11 +13,25 @@
 <link rel="stylesheet" href="css/style_accueil.css">
 
 <?php
-  $req = new statsRDV();
   $prenom =  $_SESSION["prenom"];
-  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div class='message'>Bonjour $prenom</div>";
+  echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom</div>";
 
-  $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];     
+  if ($_SESSION['id_profil'] == 6) {
+    $req = new statsRDV();
+    $data = [$_SESSION['result1'], $_SESSION['result2'], $_SESSION['result3']];  
+  } else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
+
+  } else if ($_SESSION['id_profil'] == 4) {
+    echo "On nous a rien demandé pour lui";
+  } else if ($_SESSION['id_profil'] == 3) {
+    $req = new statsAdmin();
+    $data = $req->statsAgentsManager();
+    $count[] = $data['rdvFini'];
+    $agent[] = $data['agent'];
+  } else if ($_SESSION['id_profil'] == 1) {
+    $req = new statsAdmin();
+    $data = [$_SESSION['allRDV'], $_SESSION['allRDV7Days']];
+  }
 ?>
 
 <div class="container">
@@ -56,68 +70,19 @@
 <div class="blank"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  let idprofil = <?php print json_encode ($_SESSION['id_profil']); ?>
-  
-  if (idprofil == 6) {
 
-    data = <?php print json_encode($data); ?>
+<?php 
+  if ($_SESSION['id_profil'] == 6) {
+    include_once("js/statsAgent.php"); 
+  } else if ($_SESSION['id_profil'] == 5 || $_SESSION['id_profil'] == 2) {
 
-    const ctx = document.getElementById('myChart');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Nombre de RDV', 'RDV 7 derniers jours', 'Clients vus'],
-        datasets: [{
-          label: '#RDV',
-          data: data,
-          backgroundColor:['#FF0000', '#00ff00', '#0000ff'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
+  } else if ($_SESSION['id_profil'] == 4) {
 
+  } else if ($_SESSION['id_profil'] == 3) {
+    include_once("js/statsManager.php");
+  } else if ($_SESSION['id_profil'] == 1) {
+    include_once("js/statsPresident.php"); 
   }
-</script>
-
-<table border="1">
-    <thead>
-        <tr>
-            <th>Dates</th>
-            <th>Nom</th>
-            <th>Adresse</th>
-            <th>Commentaire</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if ($req->derniersRDV->num_rows > 0): ?>
-            <?php while($row = $req->derniersRDV->fetch_assoc()): ?>
-                <tr>
-                    <td>
-                        <table>
-                            <tr><td><?php echo($row["date_debut"]); ?></td></tr>
-                            <tr><td><?php echo($row["date_fin"]); ?></td></tr>
-                        </table>
-                    </td>
-                    <td><?php echo($row["nom_client"]); ?></td>
-                    <td><?php echo($row["adresse_rdv"]); ?></td>
-                    <td><?php echo($row["commentaire"]); ?></td>
-                    <td>
-                        <form action="rdv.php" method="get">
-                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                            <input type="submit" value="Voir le rendez-vous">
-                        </form> 
-                    </td>
-                </tr>
-            <?php endwhile; endif ?>
-    </tbody>
-</table>
+?>
 
 <?php include ("footer.php");?>
