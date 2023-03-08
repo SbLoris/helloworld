@@ -3,9 +3,19 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
 ?>
+<<<<<<< HEAD
 <?php include ("header.php");?>
 <?php require_once("api/includeAll.php"); ?>
 <?php $page = 'accueil'; ?>
+=======
+
+<?php include ("header.php");
+
+if (empty($_SESSION["idUser"])) {
+  header("location: index_login.php");
+}
+?>
+>>>>>>> 7e6af352d92962644854989cbc9df2eacd507a01
 
 <link rel="stylesheet" href="css/style_accueil.css">
 <style>
@@ -198,5 +208,6 @@ body {
     include_once("inc/statsPresident.php"); 
   }
 ?>
+<script src="./js/derniersRDV.js"></script>
 
 <?php include ("footer.php");?>

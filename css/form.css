@@ -45,7 +45,7 @@
     height: 2.5rem;
 }
 
-.startTd, .endTd, .nameTd, .addressTd, .commentaryTd {
+.startTd, .endTd, .selectClientTd, .addressTd, .commentaryTd {
     border: 1px solid black;
     width: 20rem;
 }

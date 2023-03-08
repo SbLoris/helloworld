@@ -37,21 +37,21 @@ VALUES (
     'Jules',
     'jules.martin@julesimmobilier.fr',
     MD5('jaimelimmobilier123'),
-    'team 0',
+    NULL,
     1
 ), (
     'Lebreton',
     'Loris',
     'loris.lebreton@julesimmobilier.fr',
     MD5('lasecretaire'),
-    'team 0',
+    NULL,
     2
 ), (
     'Seigeot',
     'Maxence',
     'maxence.seigeot@julesimmobilier.fr',
     MD5('lacompta'),
-    'team 0',
+    NULL,
     5
 ), (
     'Linget',
@@ -191,45 +191,3 @@ VALUES (
     4,
     2
 );
-
-CREATE TABLE usersrigths (
-    id_profil INT,
-    statsALL BOOLEAN,
-    readALL BOOLEAN,
-    readTeam BOOLEAN,
-    FOREIGN KEY (id_profil) REFERENCES profil(id)
-);
-
-INSERT INTO usersrigths (id_profil, statsALL, readALL, readTeam)
-VALUES (
-    1,
-    1,
-    0,
-    0
-), (
-    2,
-    0,
-    1,
-    0
-), (
-    3,
-    0,
-    0,
-    1
-), (
-    4,
-    0,
-    0,
-    0
-), (
-    5,
-    0,
-    1,
-    0
-), (
-    6,
-    0,
-    0,
-    0
-);
-
