@@ -171,22 +171,36 @@ body {
 
 <div class="container">
   <canvas id="myChart"width="500" height="100"></canvas>
-  <div class="menu">
-  <ul class="navbar">
-    <li><a href="accueil.php"><img src="img/logo.png" alt=""></a></li>
-        <li><a href="#RDV">RDV</a>
-        <!--<ul>
-            <li><a href="#">Récents</a></li>
-            <li><a href="#">A venir</a></li>
-        </ul>--></li>
+  <ul class="menu">
+        <li><a href="#RDV">RDV</a></li>
         <li><a href="#stats">Statistiques</a></li>
         
         <li><a href="#">Planning</a></li>
         <li><a href="#">Feuilles de suivies</a></li>
-        <div class="deco">
-        <li id="deco"><a href="index_login.php"><img src="img/deco.png" alt=""></a></li></div>
     </ul>
-  </div>
+    <div class="ligne">
+            <div class="produit">
+                <img src="https://www.ville-palaiseau.fr/fileadmin/_processed_/b/4/csm_Bandeau_prendre_rendez-vous_ae8e2e2103.jpg" alt="">
+                <a href="#popup" class="button">Rendez-vous</a>
+
+                <div id="popup" class="overlay">
+                    <div class="popup">
+                        <h2>SWX-78</h2>
+                        <a href="#" class="cross">&times;</a>
+                        <img src="https://www.bmc-switzerland.com/media/catalog/product/cache/db486834651b8299de17894045ea7cde/b/m/bmc-22-10507-004-bmc-speedfox-al-two-mountain-bike-green-01.png" alt="" width="50%">
+                        <p>Un cadre en aluminium léger, avec un revêtement poudre durable haut de gamme et une géométrie dédiée aux cyclistes en herbe. Doté de roues 20", d’un groupe SRAM 8 vitesses et de freins TEKTRO, il inspire confiance avec son ergonomie
+                            adaptée. Simple. Fonctionnel. Le plaisir. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="produit">
+                <img src="https://medias.pourlascience.fr/api/v1/images/view/5a82ac868fe56f032c48000e/wide_1300/image.jpg" alt="">
+                <a href="#popup" class="button">Statistiques</a>
+
+                <div id="popup" class="overlay">
+                <canvas id="myChart"width="500" height="100"></canvas>
+                </div>
+            </div>
 </div>
 
 <div class="blank"></div>
