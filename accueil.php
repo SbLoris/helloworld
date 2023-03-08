@@ -2,14 +2,20 @@
 <?php
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
-    if($idUser == false) {
-      header("Location: index_login.php?login=error");
-      exit();
-    }
 ?>
+<<<<<<< HEAD
 <?php include ("header.php");?>
 <?php require_once("api/includeAll.php"); ?>
 <?php $page = 'accueil'; ?>
+=======
+
+<?php include ("header.php");
+
+if (empty($_SESSION["idUser"])) {
+  header("location: index_login.php");
+}
+?>
+>>>>>>> 8fda2e35cc8e49c4cc32ff211fcdb62bd948fa93
 
 <link rel="stylesheet" href="css/style_accueil.css">
 <style>

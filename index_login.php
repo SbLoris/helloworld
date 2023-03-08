@@ -3,7 +3,9 @@
 	require_once("api/includeAll.php");
 
 	$conn = new DatabaseConnection();
-
+	if(isset($_SESSION['idUser'])) {
+		header("location: accueil.php");
+	}
 	// Vérification de la connexion
 	if (!$conn) {
 		die("Connexion échouée: " . mysqli_connect_error());
@@ -35,7 +37,7 @@
 </header>
 <body>
     
-	<form action="accueil.php" method="post" class="login-mod">
+	<form action="login.php" method="post" class="login-mod">
 		<p>Nom d'utilisateur :</p>
 		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
          
