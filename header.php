@@ -12,12 +12,12 @@
     <div class="wrap">
     <nav>
   <ul class="navbar">
-    <li><a href="#"><img src="img/logo.png" alt=""></a></li>
+    <li><a href="accueil.php"><img src="img/logo.png" alt=""></a></li>
         <li><a href="#RDV">RDV</a>
-        <ul>
+        <!--<ul>
             <li><a href="#">Récents</a></li>
             <li><a href="#">A venir</a></li>
-        </ul></li>
+        </ul>--></li>
         <li><a href="#stats">Statistiques</a></li>
         
         <li><a href="#">Planning</a></li>
