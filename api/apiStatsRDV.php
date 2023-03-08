@@ -27,11 +27,11 @@ class statsRDV {
                         $sql = "SELECT COUNT(*) as rdvTotal
                                 FROM rendezvous
                                 WHERE id_user = $idUser;";
-                        $result1 = $this->db->mysqli->query($sql);
-
-                        foreach ($result1 as $data) {
-                                return $_SESSION['result1'] = $data['rdvTotal'];
-                        }
+                        $result = $this->db->mysqli->query($sql);
+                        
+                        foreach($result as $data) {
+                                return $data;
+                        }    
                 }
         }
 
@@ -43,11 +43,11 @@ class statsRDV {
                                 FROM rendezvous
                                 WHERE id_user = $idUser
                                 AND date_fin > DATE_SUB(NOW(), INTERVAL -7 DAY);";
-                        $result2 = $this->db->mysqli->query($sql);
+                        $result = $this->db->mysqli->query($sql);
 
-                        foreach ($result2 as $data) {
-                                return $_SESSION['result2'] = $data['rdvTotal7days'];
-                        }
+                        foreach($result as $data) {
+                                return $data;
+                        }  
                 }
         }
 
@@ -59,11 +59,11 @@ class statsRDV {
                                 FROM rendezvous
                                 WHERE id_user = $idUser
                                 AND id_statut_rdv = 2;";
-                        $result3 = $this->db->mysqli->query($sql);
+                        $result = $this->db->mysqli->query($sql);
 
-                        foreach ($result3 as $data) {
-                                return $_SESSION['result3'] = $data['nbrClientVu'];
-                        }
+                        foreach($result as $data) {
+                                return $data;
+                        }  
                 }
         }
 

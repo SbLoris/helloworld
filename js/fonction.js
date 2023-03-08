@@ -25,3 +25,4 @@ icone.addEventListener("click", function() {
     passwordField.type = "password";
   }
 });
+

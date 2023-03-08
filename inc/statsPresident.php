@@ -22,3 +22,29 @@
       }
     });
 </script>
+
+<script>
+    data = <?php print json_encode($count[0]); ?>;
+    labels = <?php print json_encode($agent[0]); ?>;
+
+    const ctxs = document.getElementById('myOtherChart');
+    new Chart(ctxs, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Classement des agents',
+          data: data,
+          backgroundColor:['#FF0000', '#00ff00', '#0000ff'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+</script>
