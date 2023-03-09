@@ -14,13 +14,13 @@ class modAdmin {
     }
 
     public function addEmploye() {
-        if (isset($_SESSION['addEmploye'])){
+        if (isset($_REQUEST['addEmploye'])){
             $name = $_REQUEST["name"];
             $username = $_REQUEST["username"];
             $mail = $_REQUEST["mail"];
             $password = $_REQUEST["password"];
             $team = $_REQUEST["team"];
-            $id_profil = $_REQUEST["id_profil"];
+            $id_profil = $_REQUEST["role"];
 
             $sql = "INSERT INTO users(nom, prenom, mail, mdp, team, id_profil)
                     VALUES ('$name', '$username', '$mail', MD5('$password'), '$team', '$id_profil')";
