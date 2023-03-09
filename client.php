@@ -16,9 +16,8 @@ if (!$result) {
 ?>
 
 
-<html>
-<body>
 
+<body>
 <div class="card-container">
 	<form class="card" action = './inc/clientAdd.php' method ='POST'>
 		<!-- <input type = 'file' name = 'addImage'> --> <!-- Pas d'images dans la db -->
@@ -51,7 +50,7 @@ if (!$result) {
 	</div>
 <?php endwhile ?>
 </body>
-</html>
+
 
 
 <script src="./js/client.js"></script>

@@ -1,3 +1,4 @@
+//Create modify button for each card
 const modifs = document.querySelectorAll('.modify')
 modifs.forEach(function(modif) {
     modif.addEventListener('click', function(event) {
@@ -68,19 +69,17 @@ modifs.forEach(function(modif) {
         phoneInput.name = 'phone'
         phoneInput.placeholder = 'Téléphone';
 
-
+        //Create form buttons
         const buttons = document.createElement("div")
         buttons.style.display = 'flex'
 
         const confirm = document.createElement("button")
         confirm.type = 'submit'
         confirm.innerHTML = 'confirmer'
-        confirm.classList.add('choose')
 
         const cancel = document.createElement("button")
         cancel.type = 'button'
         cancel.innerHTML = 'Annuler'
-        cancel.classList.add('choose')
         cancel.addEventListener('click', function(event) {
             event.preventDefault
             card.appendChild(card.querySelector('.clientId'))
@@ -98,6 +97,7 @@ modifs.forEach(function(modif) {
     })
 })
 
+//Create delete button
 const dels = document.querySelectorAll('.delete')
 dels.forEach(function(del) {
     del.addEventListener('click', function(event) {
@@ -130,12 +130,10 @@ dels.forEach(function(del) {
         const confirm = document.createElement('button')
         confirm.type = 'submit'
         confirm.innerHTML = 'Confirmer'
-        confirm.classList.add('choose')
 
         const cancel = document.createElement('button')
         cancel.type = 'button'
         cancel.innerHTML = 'Annuler'
-        cancel.classList.add('choose')
         cancel.addEventListener('click', function(event) {
             card.appendChild(card.querySelector('.clientId'))
             form.remove()
