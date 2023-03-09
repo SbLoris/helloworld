@@ -1,3 +1,10 @@
+<?php 
+  require_once ("api/includeAll.php");
+  if (empty($_SESSION["idUser"])) {
+    header("location: index_login.php?login=expire");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
