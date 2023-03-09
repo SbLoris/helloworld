@@ -89,22 +89,24 @@ echo "
 
 while ($row = mysqli_fetch_assoc($result)) {
     echo'<div class="info">';
-    echo'<table>
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Date début</th>
-            <th>Date fin</th>
-            <th>Adresse</th>
-            <th>Commentaire</th>
-            <th>Statut RDV</th>
-            <th>Agent</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+    echo'<table>';
+    echo'<thead>';
+    echo'<tr>';
+    echo'<th>Nom</th>';
+    echo'<th>Date début</th>';
+    echo'<th>Date fin</th>';
+    echo'<th>Adresse</th>';
+    echo'<th>Commentaire</th>';
+    echo'<th>Statut RDV</th>';
+    if ($_SESSION['id_profil'] != 6) 
+      {
+        echo'<th>Agent</th>';
+      }
+    echo'</tr>';
+    echo'</thead>';
+    echo'<tbody>';
+    echo'<tr>';
          
-  ';
     echo "<td><a href='#' class='myLink'>" . $row["pnom_client"] . "</a></td>";
     echo "<td>" . $row["date_debut"] . "</td>";
     echo "<td>" . $row["date_fin"] . "</td>";
@@ -116,7 +118,10 @@ while ($row = mysqli_fetch_assoc($result)) {
       } else if ($row["id_statut_rdv"] == 2) {
         echo "Rendez-vous terminé";
       };
-    echo "<td>" . $row["agent"] . "</td>";
+    if ($_SESSION['id_profil'] != 6) 
+      {
+        echo "<td>" . $row["agent"] . "</td>";
+      }
     echo'</tr>
         </tbody>
 </table> </div>
