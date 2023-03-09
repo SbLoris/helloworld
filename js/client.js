@@ -10,6 +10,10 @@ modif.addEventListener('click', function (event) {
         let otherCard = form.parentElement
         
         otherCard.appendChild(otherCard.querySelector('.clientId'))
+        form.parentElement.querySelector('.clientName').style.display = ''
+        form.parentElement.querySelector('.clientAddress').style.display = ''
+        form.parentElement.querySelector('.clientEmail').style.display = ''
+        form.parentElement.querySelector('.clientPhone').style.display = ''
         form.parentElement.querySelector('.modify').style.display = ''
         form.parentElement.querySelector('.delete').style.display = ''
         form.remove()

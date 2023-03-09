@@ -2,18 +2,75 @@
 require_once("api/includeAll.php");
 include("header.php");
 
+$mysqli = new DatabaseConnection();
+
 // Récupérer l'identifiant du rendez-vous à partir de la méthode GET
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
+    $result = mysqli_query($mysqli->mysqli,
+     "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+     FROM rendezvous RV 
+     LEFT JOIN clients C ON RV.id_client = C.id 
+     WHERE RV.id_client = $id ");
+
 }
 else {
-  echo'Aucune informations concernant ce rdv';  
+    $id = $_SESSION['idUser'];
+    $auth = false;
+
+    if($_SESSION['id_profil'] == 1) {
+      $auth = true;
+    }
+    if($_SESSION['id_profil'] == 2) {
+      $auth = true;
+    }
+    if($_SESSION['id_profil'] == 5)
+    {
+      $auth = true;
+    }
+
+    if($_SESSION['id_profil'] == 6) {
+      $result = mysqli_query($mysqli->mysqli,
+      "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+      FROM rendezvous RV 
+      LEFT JOIN clients C ON RV.id_client = C.id 
+      WHERE RV.id_user = $id ");
+
+      if (mysqli_num_rows($result) == 0) {
+        echo("Vous n'avez pas de RDV de disponible");
+      }
+    }
+
+    if($auth == true) {
+      $result = mysqli_query($mysqli->mysqli,
+      "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+      FROM rendezvous RV 
+      LEFT JOIN clients C ON RV.id_client = C.id");
+
+      if (mysqli_num_rows($result) == 0) {
+        echo("Vous n'avez pas de RDV de disponible");
+      }
+    }
+
+    if($_SESSION['id_profil'] == 3) {
+      $team = $_SESSION['team'];
+
+      $result = mysqli_query($mysqli->mysqli,
+      "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+      FROM rendezvous RV 
+      LEFT JOIN clients C ON RV.id_client = C.id
+      LEFT JOIN users U ON RV.id_user = U.id
+      WHERE U.team = '$team' ");
+
+      if (mysqli_num_rows($result) == 0) {
+        echo("Vous n'avez pas de RDV de disponible");
+      }
+    }
 }
 
 
 // Récupérer les informations du rendez-vous depuis votre base de données en utilisant $id_rendezvous
-$mysqli = new DatabaseConnection();
-$result = mysqli_query($mysqli->mysqli, "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone FROM rendezvous RV LEFT JOIN clients C ON RV.id_client = C.id WHERE RV.id_client = $id ");
+
 
 
 

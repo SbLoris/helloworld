@@ -37,13 +37,32 @@ rowDeletes.forEach(function(rowDelete) {
 const modify = document.querySelectorAll(".modify");
 modify.forEach(function(modif) {
     modif.addEventListener('click', function (event) {
-        console.log('hello')
+        const allForms = document.querySelectorAll('.form')
+        allForms.forEach(function(form){
+           form.querySelector('.startTd') !== null ? form.querySelector('.startTd').remove():null
+           form.querySelector('.start').style.display = ''
+
+           form.querySelector('.endTd') !== null ? form.querySelector('.endTd').remove():null
+           form.querySelector('.end').style.display = ''
+
+           form.querySelector('.addressTd') !== null ? form.querySelector('.addressTd').remove():null
+           form.querySelector('.address').style.display = ''
+
+           form.querySelector('.commentaryTd') !== null ? form.querySelector('.commentaryTd').remove():null
+           form.querySelector('.commentary').style.display = ''
+
+           form.querySelector('.buttonConfirm') !== null ? form.querySelector('.buttonConfirm').remove():null
+           form.querySelector('.modify') !== null ? form.querySelector('.modify').style.display = '':null
+
+
+           form.querySelector('.buttonCancel') !== null ? form.querySelector('.buttonCancel').remove():null
+           form.querySelector('.delete') !== null ?form.querySelector('.delete').style.display = '':null
+        })
+
         event.preventDefault();
         let rowTarget = modif.parentNode.parentNode;
         rowTarget.action = "inc/rowModify.php"
-        console.log(rowTarget)
         rowTarget.querySelector(".confirm").value = rowTarget.querySelector(".godelete").innerHTML;
-        console.log(rowTarget.querySelector(".confirm"))
         
         //Hide rowTarget cells
         rowTarget.querySelector(".start").style.display = 'none'
@@ -134,7 +153,6 @@ modify.forEach(function(modif) {
 
             startInput.remove();
             endInput.remove();
-            nameTd.remove();
             addressTd.remove();
             commentaryTd.remove();
         })
@@ -143,7 +161,6 @@ modify.forEach(function(modif) {
 
 
 const addClient = document.querySelector(".selectClientTd");
-console.log(addClient)
 const addClientPos = addClient.getBoundingClientRect();
 addClient.addEventListener('change', function () {
     if(addClient.value == 'addClient') {

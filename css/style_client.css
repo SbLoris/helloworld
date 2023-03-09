@@ -35,8 +35,20 @@ p
 	margin-bottom: 5px;
 }
 
-
-
+.delete {
+margin: 1rem;
+}
+.delete:hover{
+	cursor: pointer;
+	color: #FFC72C;
+}
+.modify:hover{
+cursor: pointer;
+color: #FFC72C;	
+}
+.modify{
+margin: 1rem;
+}
 strong {
 	font-weight: bold;
 }
