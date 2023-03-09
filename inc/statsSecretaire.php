@@ -1,3 +1,22 @@
+<?php 
+  require_once("api/includeAll.php"); 
+
+  $auth = false;
+
+  if ($_SESSION['id_profil'] == 5) {
+    $auth = true;
+  } 
+
+  if ($_SESSION['id_profil'] == 2) {
+    $auth = true;
+  } 
+
+  if($auth == false) {
+  echo "Vous n'avez pas les droits pour accéder à cette page";
+    exit();
+  }
+?>
+
 <div border="1">
       <div class = "thead">
         <div class = "th">Dates</div>

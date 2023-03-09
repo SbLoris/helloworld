@@ -1,4 +1,11 @@
-<canvas id="myChart"width="500" height="250"></canvas>
+<?php 
+  require_once("api/includeAll.php"); 
+
+  if ($_SESSION['id_profil'] != 3) {
+    echo "Vous n'avez pas les droits pour accéder à cette page";
+    exit();
+  } 
+?>
 
 <script>
     data = <?php print json_encode($count); ?>;

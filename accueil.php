@@ -4,14 +4,15 @@
   $idUser = $_SESSION["idUser"];
 ?>
 
-<?php include ("header.php");
+<?php 
+$stylesheets = array("css/form.css");
+include ("header.php");
 
 if (empty($_SESSION["idUser"])) {
   header("location: index_login.php");
 }
 ?>
 
-<link rel="stylesheet" href="css/style_accueil.css">
 <?php
   $prenom =  $_SESSION["prenom"];
   echo "<link rel='stylesheet' href='css/style_accueil.css'> <div id='stats' class='message'>Bonjour $prenom<br> Content de vous revoir ! </div>";
@@ -71,6 +72,5 @@ if (empty($_SESSION["idUser"])) {
     include_once("inc/statsPresident.php"); 
   }
 ?>
-<script src="./js/derniersRDV.js"></script>
 
 <?php include ("footer.php");?>

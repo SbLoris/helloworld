@@ -11,7 +11,7 @@ class modUsers {
         $this->seeAllClients = $this->seeAllClients();
     }
 
-    public function rdvAgentsManager() {
+    public function seeAllClients() {
         if (isset($_SESSION['voirClients'])){
             $sql = "SELECT nom, prenom, adresse, email, telephone
                     FROM clients";
