@@ -13,7 +13,11 @@ else {
 
 // Récupérer les informations du rendez-vous depuis votre base de données en utilisant $id_rendezvous
 $mysqli = new DatabaseConnection();
-$result = mysqli_query($mysqli->mysqli, "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone FROM rendezvous RV LEFT JOIN clients C ON RV.id_client = C.id WHERE RV.id_client = $id ");
+$result = mysqli_query($mysqli->mysqli, 
+"SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+FROM rendezvous RV 
+LEFT JOIN clients C ON RV.id_client = C.id 
+WHERE RV.id_client = $id ");
 
 
 
