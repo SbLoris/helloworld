@@ -58,9 +58,9 @@ tbody tr:hover {
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.4);
 	width: 30rem;
-	margin-left: 25rem;
+	margin-left: 25vh;
 	
-	margin-top: 8rem;
+	
 	
 	padding: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
