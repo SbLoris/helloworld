@@ -63,6 +63,8 @@
 			$login = $_GET['login'];
 			if($login == "error") {
 				echo "<div class='error'>Mot de passe ou identifiant incorrect </div> ";
+			} else if($login == "expire") {
+				echo "<div class='error'>Votre session a expiré, merci de vous reconnecter</div> ";
 			}
 		}
 	?>   
