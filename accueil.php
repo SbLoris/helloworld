@@ -9,7 +9,7 @@ $stylesheets = array("css/form.css");
 include ("header.php");
 
 if (empty($_SESSION["idUser"])) {
-  header("location: index_login.php");
+  header("location: index_login.php?login=expire");
 }
 ?>
 

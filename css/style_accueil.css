@@ -101,6 +101,8 @@ body {
 }
 
 .message {
-    font-size: 15px;
+    font-size: 25px;
     text-align: center;
+    color: #004F71;
+    padding-top: 50px;
 }
