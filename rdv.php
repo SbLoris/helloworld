@@ -8,9 +8,9 @@ $mysqli = new DatabaseConnection();
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $result = mysqli_query($mysqli->mysqli,
-     "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+     "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone
      FROM rendezvous RV 
-     LEFT JOIN clients C ON RV.id_client = C.id 
+     LEFT JOIN clients C ON RV.id_client = C.id
      WHERE RV.id_client = $id ");
 
 }
@@ -43,9 +43,10 @@ else {
 
     if($auth == true) {
       $result = mysqli_query($mysqli->mysqli,
-      "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+      "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone, CONCAT (U.nom, ' ', U.prenom) AS agent
       FROM rendezvous RV 
-      LEFT JOIN clients C ON RV.id_client = C.id");
+      LEFT JOIN clients C ON RV.id_client = C.id
+      LEFT JOIN users U ON RV.id_user = U.id");
 
       if (mysqli_num_rows($result) == 0) {
         echo("Vous n'avez pas de RDV de disponible");
@@ -56,7 +57,7 @@ else {
       $team = $_SESSION['team'];
 
       $result = mysqli_query($mysqli->mysqli,
-      "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone 
+      "SELECT CONCAT(C.nom, ' ', C.prenom) as pnom_client, RV.date_debut, RV.date_fin, RV.adresse_rdv, RV.commentaire,RV.id_statut_rdv, C.email, C.adresse, C.telephone, CONCAT (U.nom, ' ', U.prenom) AS agent
       FROM rendezvous RV 
       LEFT JOIN clients C ON RV.id_client = C.id
       LEFT JOIN users U ON RV.id_user = U.id
@@ -97,7 +98,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <th>Adresse</th>
             <th>Commentaire</th>
             <th>Statut RDV</th>
-
+            <th>Agent</th>
         </tr>
     </thead>
     <tbody>
@@ -115,6 +116,7 @@ while ($row = mysqli_fetch_assoc($result)) {
       } else if ($row["id_statut_rdv"] == 2) {
         echo "Rendez-vous terminé";
       };
+    echo "<td>" . $row["agent"] . "</td>";
     echo'</tr>
         </tbody>
 </table> </div>
