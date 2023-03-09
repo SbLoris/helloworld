@@ -63,6 +63,7 @@ if (empty($_SESSION["idUser"])) {
 ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
 <?php 
   if ($_SESSION['id_profil'] == 6) {
     include_once("inc/statsAgent.php"); 

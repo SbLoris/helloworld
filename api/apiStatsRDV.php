@@ -71,7 +71,7 @@ class statsRDV {
         public function derniersRDV() {
                 if (isset($_SESSION['idUser'])){
                         $idUser = $_SESSION['idUser'];
-                        $sql = "SELECT RV.id, RV.date_debut, RV.date_fin, CONCAT(C.nom, ' ', C.prenom) AS pnom_client, RV.adresse_rdv, RV.commentaire
+                        $sql = "SELECT RV.id, RV.date_debut, RV.date_fin, CONCAT(C.nom, ' ', C.prenom) AS pnom_client, RV.adresse_rdv, RV.commentaire, RV.id_client
                                 FROM rendezvous RV
                                 LEFT JOIN clients C ON RV.id_client = C.id
                                 WHERE RV.id_user = $idUser
