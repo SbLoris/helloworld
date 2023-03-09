@@ -22,7 +22,7 @@ body {
 .card img {
 	border-radius: 50%;
 	margin-bottom: 20px;
-   
+  
 }
 
 h1 {
@@ -45,10 +45,19 @@ strong {
     color: black;
 	margin-bottom: 1rem;
 } 
+
 .card a:hover{
  color: #FFC72C;
 }
+
+.card input {
+	width: 20rem;
+	height: 2rem;
+}
+
 .modifier{
 	display: flex;
 	justify-content: end;
 }
+
+

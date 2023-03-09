@@ -4,7 +4,9 @@
   $idUser = $_SESSION["idUser"];
 ?>
 
-<?php include ("header.php");
+<?php
+$stylesheets = array("css/form.css");
+include ("header.php");
 
 if (empty($_SESSION["idUser"])) {
   header("location: index_login.php");

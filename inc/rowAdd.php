@@ -39,5 +39,5 @@ $result = $conn->query($sql);
 
 
 
-/* header('location:../accueil.php'); */
+header('location:'.$_SERVER['HTTP_REFERER']);
 ?>
