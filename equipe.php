@@ -18,9 +18,9 @@
     <label for="team">--Choisissez une équipe</label>
     <select name ='team' required>
         <option value="NoTeam">Aucune équipe</option>
-        <option value="TeamA">Team A</option>
-        <option value="TeamB">Team B</option>
-        <option value="TeamC">Team C</option>
+        <option value="team A">Team A</option>
+        <option value="team B">Team B</option>
+        <option value="team C">Team C</option>
     </select>
     <label for="role">--Choisissez un rôle</label>
     <select name="role" required>
