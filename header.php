@@ -27,6 +27,7 @@
   <div class="header-right">
     <a class="class" href="accueil.php">Accueil</a>
     <a class="client" href="client.php">Clients</a>
+    <a class="rdv" href="rdv.php">RDV</a>
     <?php 
         if ($_SESSION['id_profil'] == 1) {
           echo "<a href='equipe.php'>Gérer les équipes</a>";

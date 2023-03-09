@@ -62,11 +62,12 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity .4s;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
     visibility: hidden;
     opacity: 0;
-}
+    transition: opacity 0.3s ease-in-out;
+  }
 
 .overlay:target {
     visibility: visible;
@@ -74,15 +75,18 @@ body {
 }
 
 .popup {
-    text-align: center;
-    margin: 6rem auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 2rem;
-    background: #fff;
+    background-color: #fff;
     border-radius: 5px;
-    width: 45%;
-    position: relative;
-    transition: all 0.4s ease-in-out;
-}
+    width: 90%;
+    max-width: 800px;
+    max-height: 400px;
+    overflow: auto;
+  }
 
 .popup .cross {
     position: absolute;
@@ -94,6 +98,7 @@ body {
     transition: 0.3s ease;
     color: #333;
     font-family: Arial, Helvetica;
+   
 }
 
 .popup .cross:hover {
