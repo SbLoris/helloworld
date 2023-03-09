@@ -36,23 +36,22 @@
 	
 </header>
 <body>
-    
 	<form action="login.php" method="post" class="login-mod">
 		<p>Nom d'utilisateur :</p>
 		<input type="text" id="username" name="mail" placeholder="Votre identifiant" required>
-         
 		<div class="password-field">
-		<p>Mot de passe :</p>
-<input type="password" id="fakePassword" name="mdp" placeholder="Votre mot de passe" />
-<i id="toggler"class="fa-sharp fa-solid fa-eye-slash"></i> 
-</div>
+			<p>Mot de passe :</p>
+			<input type="password" id="fakePassword" name="mdp" placeholder="Votre mot de passe" />
+			<i id="toggler"class="fa-sharp fa-solid fa-eye-slash"></i> 
+		</div>
 
 		<div class="boutton">
-		<input type="submit" value="Se connecter">
+			<input type="submit" value="Se connecter">
 		</div>
-	<div class="mdp-forgot">
-		<a href="#">Mot de passe oublié ?</a>
-	</div>
+
+		<div class="mdp-forgot">
+			<a href="#">Mot de passe oublié ?</a>
+		</div>
 	</form>
 
     <div class="creationCompte">
@@ -66,9 +65,7 @@
 				echo "<div class='error'>Mot de passe ou identifiant incorrect </div> ";
 			}
 		}
-	?>
-    
-	<script src="js/fonction.js"></script>
-    
+	?>   
 </body>
+<script src="js/fonction.js"></script>
 </html>

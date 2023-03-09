@@ -29,8 +29,8 @@ if (!$result) {
 		<input name = 'addAddress' placeholder = 'Adresse'>
 		<input name = 'addEmail' placeholder = 'Email'>
 		<input name = 'addPhone' placeholder = 'Téléphone'>
-		<button class="create" type = 'submit'> Créer</div>
-</form>
+		<button class="create" type = 'submit'> Créer</button>
+	</form>
 </div>
 
 <?php while ($row = mysqli_fetch_assoc($result)): ?>

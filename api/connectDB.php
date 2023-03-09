@@ -8,7 +8,7 @@ class DatabaseConnection {
    private $dbname;
    public $mysqli;
 
-   public function __construct ($dbhost = 'localhost', $dbuser = 'root', $dbpass = 'root', $dbname = 'julesimmobilier') {
+   public function __construct ($dbhost = 'localhost', $dbuser = 'root', $dbpass = '', $dbname = 'julesimmobilier') {
         $this->dbhost = $dbhost;
         $this->dbuser = $dbuser;
         $this->dbpass = $dbpass;

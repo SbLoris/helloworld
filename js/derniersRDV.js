@@ -34,10 +34,10 @@ rowDeletes.forEach(function(rowDelete) {
     })
 })
 
-
 const modify = document.querySelectorAll(".modify");
 modify.forEach(function(modif) {
     modif.addEventListener('click', function (event) {
+        console.log('hello')
         event.preventDefault();
         let rowTarget = modif.parentNode.parentNode;
         rowTarget.action = "inc/rowModify.php"
@@ -60,6 +60,7 @@ modify.forEach(function(modif) {
         startInput.placeholder = "Début"
         startInput.value = rowTarget.querySelector('.start').innerHTML
         startInput.type="datetime-local"
+        startInput.required = "required"
         rowTarget.querySelector(".dates").appendChild(startInput)
 
         const endInput = document.createElement('input')
@@ -142,6 +143,7 @@ modify.forEach(function(modif) {
 
 
 const addClient = document.querySelector(".selectClientTd");
+console.log(addClient)
 const addClientPos = addClient.getBoundingClientRect();
 addClient.addEventListener('change', function () {
     if(addClient.value == 'addClient') {

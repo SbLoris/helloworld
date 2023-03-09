@@ -4,26 +4,28 @@
   if ($_SESSION['id_profil'] != 6) {
     echo "Vous n'avez pas les droits pour accéder à cette page";
     exit();
-  } 
+  }
 ?>
+
 <div class="container">
-            <div class="produit">
-                <a href="#popup" class="button" id="Stats"><h1>Statistiques</h1></a>
-
-                <div id="popup" class="overlay">
-                    <div class="popup">
-                        <h2>Statistiques</h2>
-                        <a href="#" class="cross">&times;</a>
-                        <canvas id="myChart"width="500" height="250"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="produit">
-                <a href="#popup2" class="button" id="RDV"><h1>Rendez-vous</h1></a>
-
+  <div class="produit">
+    <a href="#popup" class="button" id="Stats"><h1>Statistiques</h1></a>
+    <div id="popup" class="overlay">
+      <div class="popup">
+          <h2>Statistiques</h2>
+          <a href="#" class="cross">&times;</a>
+          <canvas id="myChart"width="500" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="produit">
+      <a href="#popup2" class="button" id="RDV"><h1>Rendez-vous</h1></a>
         <div id="popup2" class="overlay">
           <div class="popup">
               <h2>Rendez-vous</h2>
+
+              
+
               <a href="#" class="cross">&times;</a>
               <div border="1">
                 <div class = "thead">
@@ -44,16 +46,20 @@
                       <div class = "address"><?php echo($row["adresse_rdv"]); ?></div>
                       <div class = "commentary"><?php echo($row["commentaire"]); ?></div>
                       <div class="buttons">
-                        <button class="modify">Modifier</button>
-                        <button class="delete">Supprimer</button>
+                        <button class="modify" type="button">Modifier</button>
+                        <button class="delete" type="button">Supprimer</button>
                         <input type="hidden" name="confirm" class="confirm" value="">
                       </div>
+                    </form>
+                    <form action="rdv.php" method="get">
+                      <input type="hidden" name="id" value="<?php echo($row['id_client']); ?>">
+                      <input type="submit" value="Voir le rendez-vous">
                     </form>
                 <?php endwhile; endif ?>
                 <form action="inc/rowAdd.php" method="POST" class="form">
                   <div class = "dates">
-                    <input type="datetime-local" class = "start" name = 'addStart'>
-                    <input type="datetime-local" class = "end" name = 'addEnd'>
+                    <input type="datetime-local" class = "start" name = 'addStart' required="required">
+                    <input type="datetime-local" class = "end" name = 'addEnd' required="required">
                   </div>
                   <select name="client" class="selectClientTd">
                     <option value="0">Choisir un client:</option>
@@ -63,16 +69,26 @@
                       <?php endwhile; endif ?>
                       <option class = "addClient" value="addClient">Ajouter Client</option>
                   </select>
-                  <input class = "address" name = 'addAddress'>
+                  <input class = "address" name = 'addAddress' required="required">
                   <input class = "commentary" name = 'addCommentary'>
                   <button class="addClient">Ajouter</button>
                 </form>
-              </div>
+
+                <!-- Message validation action -->
+                <?php if (isset($_GET['requete'])) {
+                  $msgReq = $_GET['requete'];
+                  if($msgReq == "accepte") {
+                    echo "<p class='accepte'> Requête validée </p> ";
+                  } else if($msgReq == "denied"){
+                    echo "<p class='denied'> Veuillez choisir un client.</p> ";
+                  }
+                }?>
+                </div>
           </div>
         </div>
     </div>
   </div>
-            
+           
 
   <script>
     data = <?php print json_encode($data); ?>
@@ -98,3 +114,4 @@
       }
     });
 </script>
+<script src="js/derniersRDV.js"></script>
