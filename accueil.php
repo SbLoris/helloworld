@@ -4,111 +4,14 @@
   $idUser = $_SESSION["idUser"];
 ?>
 
-<?php include ("header.php");
+<?php 
+$stylesheets = array("css/form.css");
+include ("header.php");
 
 if (empty($_SESSION["idUser"])) {
   header("location: index_login.php");
 }
 ?>
-
-<link rel="stylesheet" href="css/style_accueil.css">
-<style>
-  :root {
-    --color: #333;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.menu {
-    display: flex;
-    flex-direction: column;
-}
-
-.produit img {
-    border-radius: 10%;
-    cursor: pointer;
-    width: 400px;
-    height: 250px;
-}
-
-.produit {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    font-family: Arial, Helvetica;
-}
-
-.button {
-    text-align: center;
-    font-size: 1.3rem;
-    padding: 0.5rem;
-    color: #fff;
-    border-radius: 20px/50px;
-    text-decoration: none;
-    cursor: pointer;
-    background: url('https://medias.pourlascience.fr/api/v1/images/view/5a82ac868fe56f032c48000e/wide_1300/image.jpg');
-    transition: all 0.3s ease-out;
-}
-
-.button:hover {
-    background: #9C2F51;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity .4s;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.overlay:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.popup {
-    text-align: center;
-    margin: 6rem auto;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 5px;
-    width: 45%;
-    position: relative;
-    transition: all 0.4s ease-in-out;
-}
-
-.popup .cross {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s ease;
-    color: #333;
-    font-family: Arial, Helvetica;
-}
-
-.popup .cross:hover {
-    color: #12FCF8;
-}
-
-
-
-</style>
 
 <?php
   $prenom =  $_SESSION["prenom"];

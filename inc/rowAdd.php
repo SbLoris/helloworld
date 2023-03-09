@@ -1,11 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "julesimmobilier";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+require_once("../api/includeAll.php");
+$conn = new DatabaseConnection();
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -31,13 +26,12 @@ $name = apostropheVerif($_POST['addName']);
 $address = apostropheVerif($_POST['addAddress']);
 $commentary = apostropheVerif($_POST['addCommentary']);
 
+$result = mysqli_query(
+  $conn->mysqli,
+  "INSERT INTO rendezvous (date_debut, date_fin, nom_client, commentaire, adresse_rdv, id_statut_rdv, id_user)
+  VALUES ('$start', '$end', '$name', '$address', '$commentary', '1', '4');"    
+);
 
-$sql =
-"INSERT INTO rendezvous (date_debut, date_fin, nom_client, commentaire, adresse_rdv, id_statut_rdv, id_user)
-VALUES ('$start', '$end', '$name', '$address', '$commentary', '1', '4');";
-$result = $conn->query($sql);
 
-
-
-/* header('location:../accueil.php'); */
+header('location:'.$_SERVER['HTTP_REFERER']);
 ?>
