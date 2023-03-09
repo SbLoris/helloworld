@@ -59,6 +59,7 @@ modify.forEach(function(modif) {
         startInput.name = "start"
         startInput.placeholder = "Début"
         startInput.value = rowTarget.querySelector('.start').innerHTML
+        startInput.type="datetime-local"
         rowTarget.querySelector(".dates").appendChild(startInput)
 
         const endInput = document.createElement('input')
@@ -66,6 +67,7 @@ modify.forEach(function(modif) {
         endInput.name = "end"
         endInput.placeholder = "Fin"
         endInput.value = rowTarget.querySelector('.end').innerHTML
+        endInput.type="datetime-local"
         rowTarget.querySelector(".dates").appendChild(endInput)
         
         /* const nameTd = document.createElement('td')

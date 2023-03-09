@@ -63,37 +63,25 @@ if (empty($_SESSION["idUser"])) {
 ?>
 
 <div class="container">
-  <canvas id="myChart"width="500" height="100"></canvas>
-  <ul class="menu">
-        <li><a href="#RDV">RDV</a></li>
-        <li><a href="#stats">Statistiques</a></li>
-        
-        <li><a href="#">Planning</a></li>
-        <li><a href="#">Feuilles de suivies</a></li>
-    </ul>
             <div class="produit">
-                <a href="#popup" class="button"><h1>Statistiques</h1></a>
+                <a href="#popup" class="button" id="Stats"><h1>Statistiques</h1></a>
 
                 <div id="popup" class="overlay">
                     <div class="popup">
                         <h2>Statistiques</h2>
                         <a href="#" class="cross">&times;</a>
-                        <canvas id="myChart"width="500" height="100"></canvas>
+                        <canvas id="myChart"width="500" height="250"></canvas>
                     </div>
                 </div>
             </div>
             <div class="produit">
-                <img src="https://medias.pourlascience.fr/api/v1/images/view/5a82ac868fe56f032c48000e/wide_1300/image.jpg" alt="">
-                <a href="#popup" class="button">Rendez-vous</a>
-            </div>
+                <a href="#popup2" class="button" id="RDV"><h1>Rendez-vous</h1></a>
+
+                <div id="popup2" class="overlay">
+                    <div class="popup">
+                        <h2>Rendez-vous</h2>
+                        <a href="#" class="cross">&times;</a>
 </div>
-
-<div class="container">
-  <canvas id="myOtherChart"></canvas>
-</div>
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <?php 
@@ -105,6 +93,5 @@ if (empty($_SESSION["idUser"])) {
     include_once("inc/statsPresident.php"); 
   }
 ?>
-<script src="./js/derniersRDV.js"></script>
 
 <?php include ("footer.php");?>
