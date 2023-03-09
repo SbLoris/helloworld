@@ -22,13 +22,14 @@ if (!$result) {
 <div class="card-container">
 	<form class="card" action = './inc/clientAdd.php' method ='POST'>
 		<!-- <input type = 'file' name = 'addImage'> --> <!-- Pas d'images dans la db -->
-		<div style = 'display: flex'>
-			<input name = 'addLastName' placeholder = 'Nom'>
-			<input name = 'addFirstName' placeholder ='Prénom'>
+		<h1>Nouveau Client</h1>
+		<div class="champs" style = 'display: flex'>
+			<input class="contact" name = 'addLastName' placeholder = 'Nom'>
+			<input class="contact" name = 'addFirstName' placeholder ='Prénom'>
 		</div>		
-		<input name = 'addAddress' placeholder = 'Adresse'>
-		<input name = 'addEmail' placeholder = 'Email'>
-		<input name = 'addPhone' placeholder = 'Téléphone'>
+		<input class="contact" name = 'addAddress' placeholder = 'Adresse'>
+		<input class="contact" name = 'addEmail' placeholder = 'Email'>
+		<input class="contact" name = 'addPhone' placeholder = 'Téléphone'><br>
 		<button class="create" type = 'submit'> Créer</div>
 </form>
 </div>
@@ -42,7 +43,7 @@ if (!$result) {
 			<a class = "clientEmail" href="mailto: <?php echo($row["email"])?>"><strong>Email: </strong><span class = "email" ><?php echo($row["email"]) ?></span></a>
 			<p class = "clientPhone"><strong>Téléphone: </strong><span class = "phone"><?php echo($row["telephone"]) ?></span></p>
 			<input class="clientId" name = "id" style = "display:none" value = <?php echo($row["id"]) ?>>
-			<div style = 'display: flex'>
+			<div class="bouton" style = 'display: flex'>
 				<div class="modify">Modifier</div>
 				<div class="delete">Supprimer</div>
 			</div>
