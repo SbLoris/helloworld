@@ -1,5 +1,8 @@
 <?php
 
+require_once("../api/includeAll.php");
+$conn = new DatabaseConnection();
+
 function apostropheVerif($var){
 $array = null;
 foreach(str_split($var) as $add){
@@ -12,11 +15,6 @@ echo('<br>' . $var . '<br>');
 return $var;
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "julesimmobilier";
-
 $id = $_POST['confirm'];
 $start = $_POST['start'];
 $end = $_POST['end'];
@@ -24,22 +22,14 @@ $end = $_POST['end'];
 $address = apostropheVerif($_POST['address']);
 $commentary = apostropheVerif($_POST['commentary']);
 
-echo('<br>' . $id . '<br>' . $start . '<br>' . $end . '<br>' /* . $name . '<br>' */ . $address . '<br>' . $commentary);
+echo('<br>' . $id . '<br>' . $start . '<br>' . $end . '<br>' . $address . '<br>' . $commentary);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$result = mysqli_query(
+  $conn->mysqli,
+  "UPDATE rendezvous
+  SET date_debut = '$start', date_fin = '$end', adresse_rdv = '$address',  commentaire = '$commentary'
+  WHERE id = '$id';"
+);
 
-$sql =
-"UPDATE rendezvous
-SET date_debut = '$start', date_fin = '$end', adresse_rdv = '$address',  commentaire = '$commentary'
-WHERE id = '$id';";
-var_dump($sql);
-$result = $conn->query($sql);
-
-
-/* header('location:../accueil.php'); */
+header('location:'.$_SERVER['HTTP_REFERER']);
 ?>
