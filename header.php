@@ -16,7 +16,7 @@
 </head>
 <header>
 <div class="header">
-  <a href="#"><img src="img/logo.png" class="logo"></img></a>
+  <a href="accueil.php"><img src="img/logo.png" class="logo"></img></a>
   
   <div class="header-right">
   <a class="class" href="accueil.php">Accueil</a>
