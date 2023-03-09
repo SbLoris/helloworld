@@ -99,3 +99,8 @@ body {
 .popup .cross:hover {
     color: #004F71;
 }
+
+.message {
+    font-size: 15px;
+    text-align: center;
+}

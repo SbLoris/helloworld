@@ -3,11 +3,6 @@
   new DatabaseConnection();
   $idUser = $_SESSION["idUser"];
 ?>
-<<<<<<< HEAD
-<?php include ("header.php");?>
-<?php require_once("api/includeAll.php"); ?>
-<?php $page = 'accueil'; ?>
-=======
 
 <?php include ("header.php");
 
@@ -15,7 +10,6 @@ if (empty($_SESSION["idUser"])) {
   header("location: index_login.php");
 }
 ?>
->>>>>>> 7e6af352d92962644854989cbc9df2eacd507a01
 
 <link rel="stylesheet" href="css/style_accueil.css">
 <?php
@@ -66,27 +60,6 @@ if (empty($_SESSION["idUser"])) {
     echo("Le nombre total de clients est de $nbr_clients");
   }
 ?>
-
-<div class="container">
-            <div class="produit">
-                <a href="#popup" class="button" id="Stats"><h1>Statistiques</h1></a>
-
-                <div id="popup" class="overlay">
-                    <div class="popup">
-                        <h2>Statistiques</h2>
-                        <a href="#" class="cross">&times;</a>
-                        <canvas id="myChart"width="500" height="250"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="produit">
-                <a href="#popup2" class="button" id="RDV"><h1>Rendez-vous</h1></a>
-
-                <div id="popup2" class="overlay">
-                    <div class="popup">
-                        <h2>Rendez-vous</h2>
-                        <a href="#" class="cross">&times;</a>
-</div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <?php 

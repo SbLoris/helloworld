@@ -1,3 +1,5 @@
+<canvas id="myChart"width="500" height="250"></canvas>
+
 <script>
     data = <?php print json_encode($count); ?>;
 
